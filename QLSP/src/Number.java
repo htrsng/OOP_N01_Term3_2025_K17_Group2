@@ -1,4 +1,4 @@
-public class Main {
+public class Number {
   public static void main(String[] args) {
     System.out.println("Toi Day");
   }
