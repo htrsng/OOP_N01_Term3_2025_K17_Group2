@@ -3,7 +3,7 @@ public class PassObject {
         int i;
     }
     static void f(Number m) {
-        m.i = 15;
+        m.i = 20;
     }
     public static void main(String[] args) {
         Number n = new Number();
