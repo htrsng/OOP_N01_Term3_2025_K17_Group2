@@ -4,7 +4,7 @@ package QLSP.test;
 
 public class DonDatCocTest {
     public static void main(String[] args) {
-        DonDatCoc dondatcoc = new DonDatCoc("01", "Honda SH", "Honda", 80000000, 5, "Còn hàng");
+        DonDatCoc dondatcoc = new DonDatCoc("01", "Honda SH", "Honda", 80000000, 15, "Còn hàng");
 
         System.out.println("Ma: " + dondatcoc.getMaXe());
         System.out.println("Hang: " + dondatcoc.getHangXe());
