@@ -19,7 +19,7 @@ public class KhachHang {
     public String getMaDon() {
         return maDon;
     }
-
+    
     public String getTenKhach() {
         return tenKhach;
     }

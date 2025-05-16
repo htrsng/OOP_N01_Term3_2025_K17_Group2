@@ -12,6 +12,7 @@ public class App {
         System.out.println("Gia: " + xe.getGia());
         System.out.println("Soluong: " + xe.getSoLuong());
         System.out.println("Trangthai: " + xe.getTrangThai());
+        
         // Tạo một đối tượng khach hang
          KhachHang kh = new KhachHang(
             "KH01",                 

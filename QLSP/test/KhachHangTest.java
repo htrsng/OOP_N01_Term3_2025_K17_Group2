@@ -1,7 +1,7 @@
 package QLSP.test;
 
 import QLSP.KhachHang;
-import java.io.PrintStream;
+
 
 public class KhachHangTest {
 
