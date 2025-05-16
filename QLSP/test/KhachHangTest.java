@@ -5,7 +5,7 @@ import java.io.PrintStream;
 
 public class KhachHangTest {
 
-    public static void main(String[] args) {
+    public void testKhanhHang(){
         QLSP.src.KhachHang khachhang = new KhachHang("001", "Dang Dac Tu", 2243456789, 05);
 
         System.out.println("Ma:"+khachhang.getMaDon());
