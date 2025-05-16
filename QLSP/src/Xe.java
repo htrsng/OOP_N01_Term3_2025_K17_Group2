@@ -16,6 +16,7 @@ public class Xe {
         this.trangThai = trangThai;
     }
 
+    
     // Get
     public String getMaXe() {
         return maXe;
