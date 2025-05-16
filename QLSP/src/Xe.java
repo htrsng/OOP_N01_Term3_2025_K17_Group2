@@ -1,5 +1,3 @@
-package QLSP;
-
 public class Xe {
     private String maXe;
     private String tenXe;
@@ -8,6 +6,7 @@ public class Xe {
     private int soLuong;
     private String trangThai;
 
+    // Constructor
     public Xe(String maXe, String tenXe, String hangXe, double gia, int soLuong, String trangThai) {
         this.maXe = maXe;
         this.tenXe = tenXe;
@@ -17,6 +16,7 @@ public class Xe {
         this.trangThai = trangThai;
     }
 
+    // Get
     public String getMaXe() {
         return maXe;
     }
@@ -39,5 +39,30 @@ public class Xe {
 
     public String getTrangThai() {
         return trangThai;
+    }
+
+    // Set
+    public void setMaXe(String maXe) {
+        this.maXe = maXe;
+    }
+
+    public void setTenXe(String tenXe) {
+        this.tenXe = tenXe;
+    }
+
+    public void setHangXe(String hangXe) {
+        this.hangXe = hangXe;
+    }
+
+    public void setGia(double gia) {
+        if (gia >= 0) this.gia = gia;
+    }
+
+    public void setSoLuong(int soLuong) {
+        if (soLuong >= 0) this.soLuong = soLuong;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
     }
 }

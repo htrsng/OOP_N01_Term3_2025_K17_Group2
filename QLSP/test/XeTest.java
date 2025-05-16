@@ -1,17 +1,14 @@
-package QLSP.test;
-
-import QLSP.Xe;
-import java.io.PrintStream;
 
 public class XeTest {
-    public static void main(String[] args) throws Exception {
-        Xe xe = new Xe("01", "Honda SH", "Honda", 80000000, 5, "Còn hàng");
-
-        System.out.println("Ma: " + xe.getMaXe());
-        System.out.println("Hang: " + xe.getHangXe());
-        System.out.println("Ten: " + xe.getTenXe());
+    public static void main(String[] args) {
+         Xe xe = new Xe("01", "Honda SH", "Honda", 80000000, 5, "Con");
+        
+        System.out.println("Ma xe: " + xe.getMaXe());
+        System.out.println("Ten xe: " + xe.getTenXe());
+        System.out.println("Hang xe: " + xe.getHangXe());
         System.out.println("Gia: " + xe.getGia());
-        System.out.println("Sl: " + xe.getSoLuong());
-        System.out.println("Tt: " + xe.getTrangThai());
+        System.out.println("Soluong: " + xe.getSoLuong());
+        System.out.println("Trangthai: " + xe.getTrangThai());
+
     }
 }
