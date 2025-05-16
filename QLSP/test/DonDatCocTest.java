@@ -1,7 +1,5 @@
 package QLSP.test;
-
 import QLSP.DonDatCoc;
-
 public class DonDatCocTest {
     public void test(){    
         DonDatCoc dondatcoc = new DonDatCoc("01", "Honda SH", "Honda", 80000000, 5, "Còn hàng");
