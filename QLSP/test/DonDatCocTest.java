@@ -1,7 +1,7 @@
 package QLSP.test;
 import QLSP.main.DonDatCoc;
 public class DonDatCocTest {
-    public void test(){    
+    public static void TestDatCoc(){    
         DonDatCoc dondatcoc = new DonDatCoc("01", "Honda SH", "Honda", 80000000, 5, "Còn hàng");
 
         System.out.println("Ma: " + dondatcoc.getMaXe());
