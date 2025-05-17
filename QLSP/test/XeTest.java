@@ -1,4 +1,6 @@
+package QLSP.test;
 
+import QLSP.main.Xe;
 
 public class XeTest {
     public static void main(String[] args) {
