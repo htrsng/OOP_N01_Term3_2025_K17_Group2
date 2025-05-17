@@ -1,9 +1,16 @@
-import java.time.LocalDate;
+//import java.time.LocalDate;
+package QLSP.main;
+
+import QLSP.test.KhachHangTest;
+import QLSP.main.KhachHang;
 
 public class App {
     public static void main(String[] args) {
+        
+        KhachHangTest.TestKhanhHang();
+
         // Tạo một đối tượng Xe
-        System.out.println("\n Thong tin xe trong cua hang\n");
+       /*  System.out.println("\n Thong tin xe trong cua hang\n");
         Xe xe = new Xe("01", "Honda SH", "Honda", 80000000, 5, "Con");
 
         System.out.println("Ma xe: " + xe.getMaXe());
@@ -29,6 +36,6 @@ public class App {
         System.out.println("Sdt: " + kh.getSoDienThoai());
         System.out.println("Maxe: " + kh.getMaXe());
         System.out.println("Ngayban: " + kh.getNgayBan());
-        
+        */
     }
 }

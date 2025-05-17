@@ -1,5 +1,5 @@
-package QLSP.test;
-
+package QLSP.main;
+ 
 public class DonDatCoc {
     private String maXe;
     private String tenXe;
