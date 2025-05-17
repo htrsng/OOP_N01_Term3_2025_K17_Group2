@@ -1,18 +1,19 @@
-import java.time.LocalDate;
+//import java.time.LocalDate;
+package QLSP.main;
 public class KhachHang {
     private String maDon;
     private String tenKhach;
     private String soDienThoai;
-    private String maXe;
-    private LocalDate ngayBan;
+    private int maXe;
+    //private LocalDate ngayBan;
 
     // Constructor
-    public KhachHang(String maDon, String tenKhach, String soDienThoai, String maXe, LocalDate ngayBan) {
+    public KhachHang(String maDon, String tenKhach, String soDienThoai, int maXe) {
         this.maDon = maDon;
         this.tenKhach = tenKhach;
         this.soDienThoai = soDienThoai;
         this.maXe = maXe;
-        this.ngayBan = ngayBan;
+        //this.ngayBan = ngayBan;
     }
 
     // Get
@@ -28,16 +29,16 @@ public class KhachHang {
         return soDienThoai;
     }
 
-    public String getMaXe() {
+    public int getMaXe() {
         return maXe;
     }
 
-    public LocalDate getNgayBan() {
+    /*public LocalDate getNgayBan() {
         return ngayBan;
-    }
+    }*/
 
     // Set
-    public void setMaDon(String maDon) {
+    /*public void setMaDon(String maDon) {
         this.maDon = maDon;
     }
 
@@ -53,7 +54,15 @@ public class KhachHang {
         this.maXe = maXe;
     }
 
-    public void setNgayBan(LocalDate ngayBan) {
+    /*public void setNgayBan(LocalDate ngayBan) {
         this.ngayBan = ngayBan;
+    }*/
+
+    public void setKhachHang(String maDon, String tenKhach, String soDienThoai, int maXe){
+        this.maDon = maDon;
+        this.tenKhach = tenKhach;
+        this.soDienThoai = soDienThoai;
+        this.maXe = maXe;
+
     }
 }
