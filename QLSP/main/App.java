@@ -1,14 +1,17 @@
 //import java.time.LocalDate;
 package QLSP.main;
 
+import QLSP.test.DonDatCocTest;
 import QLSP.test.KhachHangTest;
-import QLSP.main.KhachHang;
+import QLSP.test.XeTest;
+
 
 public class App {
     public static void main(String[] args) {
-        
+        DonDatCocTest.TestDatCoc();
         KhachHangTest.TestKhanhHang();
-
+        
+        // Tạo một đối tượng DonDatCoc
         // Tạo một đối tượng Xe
        /*  System.out.println("\n Thong tin xe trong cua hang\n");
         Xe xe = new Xe("01", "Honda SH", "Honda", 80000000, 5, "Con");
