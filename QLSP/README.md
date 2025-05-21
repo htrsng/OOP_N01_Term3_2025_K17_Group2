@@ -26,4 +26,49 @@
 - KhachHangTest.java
 - XeTest.java
 - DonDatCocTest.java
- 
+- Thành viên :
+1. Nguyễn Thị Huyền Trang
+ID : 23010181
+chữ ký : Trang
+
+2. Đặng Đắc Tú
+ID : 23010619
+chữ kí : Tú
+
+3. Lưu Quang Dũng
+ID : 23010665
+chữ kí : Dũng
+
+
+
+Project_nhóm-02:
+Xây dựng ứng dụng quản lý cửa hàng xe.
+
+Yêu cầu chính:
+- Giao diện <b>Java Spring Boot</b>.
+- Có chức năng chính :
++ Quản lý khách hàng, xe, và đơn đặt cọc.
++ Và các chức năng khác.
+
+Cụ thể:
+
+- Quản lý Khách hàng
++ chức năng: Thêm, sửa, xóa thông tin khách hàng.
++ Liệt kê: Hiển thị danh sách khách hàng, tên khách hàng.
+
+- Quản lý Xe
++ Chức năng: Thêm, sửa, xóa thông tin xe (bao gồm mã xe, tên xe, hãng xe, giá, số lượng, trạng thái).
++ Liệt kê: Hiển thị danh sách xe, có thể lọc theo hãng xe hoặc trạng thái (còn/hết hàng).
+
+- Quản lý Đơn đặt cọc
++ Chức năng: Thêm, sửa, xóa đơn đặt cọc.
++ Gán khách hàng cho xe: Cho phép gán một khách hàng cụ thể cho một xe trong đơn đặt cọc.
+
+- Dữ liệu được lưu trữ dưới dạng file nhị phân.
++ Các lớp liên quan (KhachHang, Xe, DonDatCoc) được thiết kế để đọc và ghi dữ liệu từ/đến một hoặc nhiều file nhị phân.
+
+- Trong bộ nhớ, dữ liệu được lưu trữ dưới dạng Collection (ví dụ: ArrayList cho danh sách khách hàng/xe, Map để ánh xạ khách hàng với đơn đặt cọc).
+- Chức năng bổ sung (tùy chọn):
++ Tìm kiếm xe theo giá hoặc số lượng.
++ Thống kê số lượng đơn đặt cọc theo trạng thái (đã hoàn thành/chưa hoàn thành).
+ <img src ="/">
