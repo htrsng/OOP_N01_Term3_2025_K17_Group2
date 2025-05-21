@@ -68,8 +68,7 @@ Cụ thể:
 + Các lớp liên quan (KhachHang, Xe, DonDatCoc) được thiết kế để đọc và ghi dữ liệu từ/đến một hoặc nhiều file nhị phân.
 
 - Trong bộ nhớ, dữ liệu được lưu trữ dưới dạng Collection (ví dụ: ArrayList cho danh sách khách hàng/xe, Map để ánh xạ khách hàng với đơn đặt cọc).
-
 - Chức năng bổ sung (tùy chọn):
 + Tìm kiếm xe theo giá hoặc số lượng.
 + Thống kê số lượng đơn đặt cọc theo trạng thái (đã hoàn thành/chưa hoàn thành).
- 
+ <img src ="/">
