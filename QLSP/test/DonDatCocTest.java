@@ -3,14 +3,14 @@ import QLSP.main.DonDatCoc;
 
 public class DonDatCocTest {
     public static void TestDatCoc() {    
-        DonDatCoc dondatcoc = new DonDatCoc("01", "Honda SH", "Honda", 80000000, 5, "Còn hàng");
+        DonDatCoc dondatcoc = new DonDatCoc("DDC01", "01", "Honda SH", "Honda", 80000000.0, 5, "Còn hàng");
 
         System.out.println("Thông tin đơn đặt cọc:");
-        System.out.println("Mã xe: " + dondatcoc.getMaXe());
-        System.out.println("Tên xe: " + dondatcoc.getTenXe());
-        System.out.println("Hãng xe: " + dondatcoc.getHangXe());
-        System.out.println("Giá: " + dondatcoc.getGia());
-        System.out.println("Số lượng: " + dondatcoc.getSoLuong());
-        System.out.println("Trạng thái: " + dondatcoc.getTrangThai());
+        System.out.println("Ma xe: " + dondatcoc.getMaXe());
+        System.out.println("Ten xe: " + dondatcoc.getTenXe());
+        System.out.println("Hang xe: " + dondatcoc.getHangXe());
+        System.out.println("Gia: " + dondatcoc.getGia());
+        System.out.println("So luong: " + dondatcoc.getSoLuong());
+        System.out.println("Trang thai: " + dondatcoc.getTrangThai());
     }
 }

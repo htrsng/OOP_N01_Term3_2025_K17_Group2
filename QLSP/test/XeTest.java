@@ -1,9 +1,7 @@
 package QLSP.test;
-
 import QLSP.main.Xe;
-
 public class XeTest {
-    public static void main(String[] args) {
+    public static void TestXe() {
          Xe xe = new Xe("01", "Honda SH", "Honda", 80000000, 5, "Con");
         
         System.out.println("Ma xe: " + xe.getMaXe());
