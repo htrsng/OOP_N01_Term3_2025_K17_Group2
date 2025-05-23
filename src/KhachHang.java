@@ -1,4 +1,4 @@
-
+import java.io.Serializable;
 import java.time.LocalDate;
 public class KhachHang {
     private String maDon;
@@ -6,8 +6,7 @@ public class KhachHang {
     private String soDienThoai;
     private String maXe;
     private LocalDate ngayBan;
-
-    // Đổi int maXe thành String maXe ở đây
+    
     public KhachHang(String maDon, String tenKhach, String soDienThoai, String maXe, LocalDate ngayBan) {
         this.maDon = maDon;
         this.tenKhach = tenKhach;
@@ -35,4 +34,9 @@ public class KhachHang {
     public LocalDate getNgayBan() {
         return ngayBan;
     }
+
+    public void setTenKhach(String tenKhach) { this.tenKhach = tenKhach; }
+    public void setSoDienThoai(String soDienThoai) { this.soDienThoai = soDienThoai; }
+    public void setMaXe(String maXe) { this.maXe = maXe; }
+    public void setNgayBan(LocalDate ngayBan) { this.ngayBan = ngayBan; }
 }

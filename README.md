@@ -75,3 +75,6 @@ Cụ thể:
 + Tìm kiếm xe theo giá hoặc số lượng.
 + Thống kê số lượng đơn đặt cọc theo trạng thái (đã hoàn thành/chưa hoàn thành).
  <img src ="/img/Untitled(2).png">
+
+- Nội dung 04:
+Cập nhật code cho CRUD (create/read/update/delete)  và chạy kiểm định (test) cho ít nhất 03 đối tượng trong bài tập lớn (đã hoàn thành)

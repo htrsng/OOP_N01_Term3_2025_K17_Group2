@@ -1,4 +1,4 @@
-
+import java.io.Serializable;
 public class DonDatCoc {
     private String maDon;
     private String maXe;
@@ -19,7 +19,7 @@ public class DonDatCoc {
         this.trangThai = trangThai;
     }
 
-    // Các phương thức getter
+    //  getter
     public String getMaDon() {
         return maDon;
     }
@@ -47,4 +47,12 @@ public class DonDatCoc {
     public String getTrangThai() {
         return trangThai;
     }
+
+    // setter
+    public void setMaXe(String maXe) { this.maXe = maXe; }
+    public void setTenXe(String tenXe) { this.tenXe = tenXe; }
+    public void setHangXe(String hangXe) { this.hangXe = hangXe; }
+    public void setGia(double gia) { this.gia = gia; }
+    public void setSoLuong(int soLuong) { this.soLuong = soLuong; }
+    public void setTrangThai(String trangThai) { this.trangThai = trangThai; }
 }

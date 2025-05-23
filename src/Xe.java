@@ -1,4 +1,4 @@
-
+import java.io.Serializable;
 public class Xe {
     private String maXe;
     private String tenXe;
