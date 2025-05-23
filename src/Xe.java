@@ -1,4 +1,4 @@
-package QLSP.main;
+
 public class Xe {
     private String maXe;
     private String tenXe;

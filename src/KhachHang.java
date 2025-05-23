@@ -1,13 +1,14 @@
-package QLSP.main;
+
 import java.time.LocalDate;
 public class KhachHang {
     private String maDon;
     private String tenKhach;
     private String soDienThoai;
-    private int maXe;
+    private String maXe;
     private LocalDate ngayBan;
 
-    public KhachHang(String maDon, String tenKhach, String soDienThoai, int maXe, LocalDate ngayBan) {
+    // Đổi int maXe thành String maXe ở đây
+    public KhachHang(String maDon, String tenKhach, String soDienThoai, String maXe, LocalDate ngayBan) {
         this.maDon = maDon;
         this.tenKhach = tenKhach;
         this.soDienThoai = soDienThoai;
@@ -27,7 +28,7 @@ public class KhachHang {
         return soDienThoai;
     }
 
-    public int getMaXe() {
+    public String getMaXe() {
         return maXe;
     }
 
