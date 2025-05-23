@@ -1,4 +1,3 @@
-package QLSP.main;
 
 public class DonDatCoc {
     private String maDon;
