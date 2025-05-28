@@ -76,6 +76,8 @@ Cụ thể:
 + Thống kê số lượng đơn đặt cọc theo trạng thái (đã hoàn thành/chưa hoàn thành).
 - Sơ đồ Behavioural Diagram của bài tập lớn
  <img src="img/Untitled(2).png" alt="UML Diagram" width="600">
+ ![image](https://github.com/user-attachments/assets/b5e8850a-82e6-445b-8cd3-44410ddb7384)
+
 
 - Nội dung 04:
 Cập nhật code cho CRUD (create/read/update/delete)  và chạy kiểm định (test) cho ít nhất 03 đối tượng trong bài tập lớn (đã hoàn thành)
