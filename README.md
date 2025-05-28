@@ -87,3 +87,6 @@ Cụ thể:
 
 - Nội dung 04:
 Cập nhật code cho CRUD (create/read/update/delete)  và chạy kiểm định (test) cho ít nhất 03 đối tượng trong bài tập lớn (đã hoàn thành)
+
+![image](https://github.com/user-attachments/assets/179cfcee-a8bd-4701-8392-14fbb1b82858)
+
