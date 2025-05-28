@@ -75,11 +75,14 @@ Cụ thể:
 + Tìm kiếm xe theo giá hoặc số lượng.
 + Thống kê số lượng đơn đặt cọc theo trạng thái (đã hoàn thành/chưa hoàn thành).
 - Sơ đồ Behavioural Diagram của bài tập lớn
- <img src="img/Untitled(2).png" alt="UML Diagram" width="600">
- ![image](https://github.com/user-attachments/assets/b5e8850a-82e6-445b-8cd3-44410ddb7384)
-
-![image](https://github.com/user-attachments/assets/a4b9c1d4-84ba-4f3b-9f78-4a0e96190b33)
-
++ Sơ đồ quản lý 
+ ![image](https://github.com/user-attachments/assets/f5607d0c-6e68-48ce-8bba-788133196c7d)
++ Sơ đồ chức năng quản lý khách hàng
+  ![image](https://github.com/user-attachments/assets/b47e043e-c586-49e9-afb4-8af6941a7d3d)
++ Sơ đồ chức năng đơn đặt cọc
+ ![image](https://github.com/user-attachments/assets/892ccaf8-d9e3-4c9e-be22-36c6aad43adf)
++ Sơ đồ chức năng quản lí xe
+ ![image](https://github.com/user-attachments/assets/018d0f65-50fc-431f-9915-fa6b340c4fbd)
 
 
 - Nội dung 04:
