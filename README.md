@@ -74,7 +74,19 @@ Cụ thể:
 - Chức năng bổ sung (tùy chọn):
 + Tìm kiếm xe theo giá hoặc số lượng.
 + Thống kê số lượng đơn đặt cọc theo trạng thái (đã hoàn thành/chưa hoàn thành).
- <img src ="/img/Untitled(2).png">
+- Sơ đồ Behavioural Diagram của bài tập lớn
++ Sơ đồ quản lý 
+ ![image](https://github.com/user-attachments/assets/f5607d0c-6e68-48ce-8bba-788133196c7d)
++ Sơ đồ chức năng quản lý khách hàng
+  ![image](https://github.com/user-attachments/assets/b47e043e-c586-49e9-afb4-8af6941a7d3d)
++ Sơ đồ chức năng đơn đặt cọc
+ ![image](https://github.com/user-attachments/assets/892ccaf8-d9e3-4c9e-be22-36c6aad43adf)
++ Sơ đồ chức năng quản lí xe
+ ![image](https://github.com/user-attachments/assets/018d0f65-50fc-431f-9915-fa6b340c4fbd)
+
 
 - Nội dung 04:
 Cập nhật code cho CRUD (create/read/update/delete)  và chạy kiểm định (test) cho ít nhất 03 đối tượng trong bài tập lớn (đã hoàn thành)
+
+![image](https://github.com/user-attachments/assets/179cfcee-a8bd-4701-8392-14fbb1b82858)
+
