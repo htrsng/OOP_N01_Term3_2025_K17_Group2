@@ -1,76 +1,52 @@
-import java.time.LocalDate;
-import java.util.ArrayList;
+import model.Customer;
+import manager.CustomerManager;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 public class App {
-    private ArrayList<Xe> xeList = new ArrayList<>();
-    private ArrayList<DonDatCoc> donDatCocList = new ArrayList<>();
-    private ArrayList<KhachHang> khachHangList = new ArrayList<>();
-
-    public ArrayList<Xe> addXe(Xe xe) {
-        xeList.add(xe);
-        return xeList;
-    }
-
-    public void printXeList() {
-        for (Xe xe : xeList) {
-            System.out.println("Ma Xe: " + xe.getMaXe() + ", Ten Xe: " + xe.getTenXe() +
-                    ", Hang Xe: " + xe.getHangXe() + ", Gia: " + xe.getGia() +
-                    ", So Luong: " + xe.getSoLuong() + ", Trang Thai: " + xe.getTrangThai());
-        }
-    }
-
-    // DonDatCoc
-    public ArrayList<DonDatCoc> addDonDatCoc(DonDatCoc don) {
-        donDatCocList.add(don);
-        return donDatCocList;
-    }
-
-    public void printDonDatCocList() {
-        for (DonDatCoc don : donDatCocList) {
-            System.out.println(don);
-        }
-    }
-
-    public void editDonDatCoc(String maDon, String maXe, String tenXe, String hangXe, double gia, int soLuong, String trangThai) {
-    
-    }
-
-    public void deleteDonDatCoc(String maDon) {
-       
-    }
-
-    // KhachHang
-    public ArrayList<KhachHang> addKhachHang(KhachHang khach) {
-        khachHangList.add(khach);
-        return khachHangList;
-    }
-
-    public void printKhachHangList() {
-        for (KhachHang kh : khachHangList) {
-            System.out.println(kh);
-        }
-    }
-
-    public void editKhachHang(String maDon, String tenKhach, String soDienThoai, String maXe, LocalDate ngayBan) {
-        
-    }
-
-    public void deleteKhachHang(String maDon) {
-    }
-
-
-
-    // Xe
-    public void editXe(String maXe, String tenXe, String hangXe, double gia, int soLuong, String trangThai) {
-       
-    }
-
-    public void deleteXe(String maXe) {
-       
-    }
-
     public static void main(String[] args) {
-        XeTest test = new XeTest();
-        test.testXeCRUD();
+        // 1. Tao doi tuong CustomerManager
+        CustomerManager customerManager = new CustomerManager();
+
+        // 2. Them khach hang moi
+        LocalDateTime now = LocalDateTime.now();
+        Customer customer1 = new Customer(1, "Nguyen Van A", "0123456789", "Hanoi", now);
+        customerManager.addCustomer(customer1);
+
+        // 3. Hien thi danh sach khach hang
+        System.out.println("Danh sach khach hang sau khi them");
+        printCustomers(customerManager.getAllCustomers());
+
+        // 4. Cap nhat khach hang
+        customer1.setAddress("Ha Noi - Updated");
+        customerManager.updateCustomer(
+            customer1.getCustomerId(),
+            customer1.getName(),
+            customer1.getPhone(),
+            customer1.getAddress()
+        );
+
+        System.out.println(" Danh sach khach hang sau khi cap nhat");
+        printCustomers(customerManager.getAllCustomers());
+
+        // 5. Xoa khach hang
+        customerManager.deleteCustomer(1);
+
+        System.out.println("Danh sach khach hang sau khi xoa");
+        printCustomers(customerManager.getAllCustomers());
+    }
+
+    // Ham tien ich de in danh sach
+    private static void printCustomers(List<Customer> customers) {
+        if (customers.isEmpty()) {
+            System.out.println("Khong co khach hang nao.");
+        }
+        for (Customer c : customers) {
+            System.out.println("ID: " + c.getCustomerId() +
+                               ", Ten: " + c.getName() +
+                               ", SDT: " + c.getPhone() +
+                               ", Dia chi: " + c.getAddress());
+        }
     }
 }
