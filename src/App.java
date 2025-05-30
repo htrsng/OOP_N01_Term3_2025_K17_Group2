@@ -1,52 +1,94 @@
-import model.Customer;
-import manager.CustomerManager;
-
-import java.time.LocalDateTime;
-import java.util.List;
+import manager.CarManager;
+import model.Car;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        // 1. Tao doi tuong CustomerManager
-        CustomerManager customerManager = new CustomerManager();
+        Scanner scanner = new Scanner(System.in);
+        CarManager carManager = new CarManager();
+        
+        // Thêm dữ liệu ban đầu (có thể bỏ nếu không cần)
+        carManager.addCar(new Car("XE001", "Toyota Camry", "Toyota", 50000.0, 10, "conhang"));
+        carManager.addCar(new Car("XE002", "Honda", "Honda", 40000.0, 0, "hethang"));
 
-        // 2. Them khach hang moi
-        LocalDateTime now = LocalDateTime.now();
-        Customer customer1 = new Customer(1, "Nguyen Van A", "0123456789", "Hanoi", now);
-        customerManager.addCustomer(customer1);
+        while (true) {
+            System.out.println(" MENU QUAN LY XE");
+            System.out.println("1. Them xe moi");
+            System.out.println("2. Sua thong tin xe");
+            System.out.println("3. Xoa xe");
+            System.out.println("4. Hien thi danh sach xe");
+            System.out.println("5. Thoat");
+            int choice;
+            while (true) {
+                System.out.print("Nhap lua chon cua ban: ");
+                String input = scanner.nextLine();
+                try {
+                    choice = Integer.parseInt(input);
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.println("Vui long nhap so tu 1 den 5!");
+                }
+            }
 
-        // 3. Hien thi danh sach khach hang
-        System.out.println("Danh sach khach hang sau khi them");
-        printCustomers(customerManager.getAllCustomers());
+            switch (choice) {
+                case 1: // Thêm xe
+                    System.out.println("Nhap thong tin xe moi:");
+                    System.out.print("Ma xe: ");
+                    String carId = scanner.nextLine();
+                    System.out.print("Ten xe: ");
+                    String carName = scanner.nextLine();
+                    System.out.print("Hang xe: ");
+                    String brand = scanner.nextLine();
+                    System.out.print("Gia: ");
+                    double price = scanner.nextDouble();
+                    scanner.nextLine(); // Thêm dòng này để loại bỏ '\n'
+                    System.out.print("So luong: ");
+                    int quantity = scanner.nextInt();
+                    scanner.nextLine(); // Thêm dòng này để loại bỏ '\n'
+                    System.out.print("Trang thai: ");
+                    String status = scanner.nextLine();
+                    Car newCar = new Car(carId, carName, brand, price, quantity, status);
+                    carManager.addCar(newCar);
+                    break;
 
-        // 4. Cap nhat khach hang
-        customer1.setAddress("Ha Noi - Updated");
-        customerManager.updateCustomer(
-            customer1.getCustomerId(),
-            customer1.getName(),
-            customer1.getPhone(),
-            customer1.getAddress()
-        );
+                case 2: // Sửa xe
+                    System.out.print("Nhap ma xe can sua: ");
+                    String editCarId = scanner.nextLine();
+                    System.out.println("Nhap thong tin moi cho xe:");
+                    System.out.print("Ten xe: ");
+                    String newCarName = scanner.nextLine();
+                    System.out.print("Hang xe: ");
+                    String newBrand = scanner.nextLine();
+                    System.out.print("Gia: ");
+                    double newPrice = scanner.nextDouble();
+                    scanner.nextLine(); // Thêm dòng này để loại bỏ '\n'
+                    System.out.print("So luong: ");
+                    int newQuantity = scanner.nextInt();
+                    scanner.nextLine(); // Thêm dòng này để loại bỏ '\n'
+                    System.out.print("Trang thai: ");
+                    String newStatus = scanner.nextLine();
+                    carManager.editCar(editCarId, newCarName, newBrand, newPrice, newQuantity, newStatus);
+                    break;
 
-        System.out.println(" Danh sach khach hang sau khi cap nhat");
-        printCustomers(customerManager.getAllCustomers());
+                case 3: // Xóa xe
+                    System.out.print("Nhap ma xe can xoa: ");
+                    String deleteCarId = scanner.nextLine();
+                    carManager.getDeleteCar(deleteCarId);
+                    break;
 
-        // 5. Xoa khach hang
-        customerManager.deleteCustomer(1);
+                case 4: // Hiển thị danh sách
+                    System.out.println("Danh sach xe:");
+                    carManager.printCarList();
+                    break;
 
-        System.out.println("Danh sach khach hang sau khi xoa");
-        printCustomers(customerManager.getAllCustomers());
-    }
+                case 5: // Thoat
+                    System.out.println("Tam biet!");
+                    scanner.close();
+                    System.exit(0);
 
-    // Ham tien ich de in danh sach
-    private static void printCustomers(List<Customer> customers) {
-        if (customers.isEmpty()) {
-            System.out.println("Khong co khach hang nao.");
-        }
-        for (Customer c : customers) {
-            System.out.println("ID: " + c.getCustomerId() +
-                               ", Ten: " + c.getName() +
-                               ", SDT: " + c.getPhone() +
-                               ", Dia chi: " + c.getAddress());
+                default:
+                    System.out.println("Lua chon khong hop le! Vui long chon lai.");
+            }
         }
     }
 }
