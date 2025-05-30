@@ -1,64 +1,42 @@
 package manager;
 
 import model.Customer;
-
+import java.util.ArrayList;
 import java.time.LocalDateTime;
-import java.util.*;
 
 public class CustomerManager {
-    private List<Customer> customers = new ArrayList<>();
+    ArrayList<Customer> customers = new ArrayList<>();
 
-    // Thêm khách hàng mới
-    public void addCustomer(Customer customer) {
+    public ArrayList<Customer> addCustomer(Customer customer) {
         customers.add(customer);
-    }
-
-    // Lấy tất cả khách hàng
-    public List<Customer> getAllCustomers() {
+        System.out.println("da them khach hang: " + customer.getFullname());
         return customers;
     }
 
-    // Tìm khách hàng theo ID
-    public Customer findById(int id) {
-        for (Customer c : customers) {
-            if (c.getCustomerId() == id) return c;
+    public ArrayList<Customer> getEditCustomer(String fullname, int customerId) {
+        for (int i = 0; i < customers.size(); i++) {
+            if (customers.get(i).getCustomerId() == customerId) {
+                System.out.println("true");
+                customers.get(i).setFullname(fullname);
+            }
         }
-        return null;
+        return customers;
     }
 
-    // Cập nhật thông tin khách hàng
-    public boolean updateCustomer(int id, String newName, String newPhone, String newAddress) {
-        Customer customer = findById(id);
-        if (customer != null) {
-            customer.setName(newName);
-            customer.setPhone(newPhone);
-            customer.setAddress(newAddress);
-            return true;
+    public ArrayList<Customer> getDeleteCustomer(int customerId) {
+        for (int i = 0; i < customers.size(); i++) {
+            if (customers.get(i).getCustomerId() == customerId) {
+                customers.remove(i);
+            }
         }
-        return false;
+        return customers;
     }
 
-    // Xoá khách hàng
-    public boolean deleteCustomer(int id) {
-        return customers.removeIf(c -> c.getCustomerId() == id);
-    }
-
-    // Cập nhật điểm tích lũy
-    public boolean addLoyaltyPoints(int id, int points) {
-        Customer customer = findById(id);
-        if (customer != null) {
-            customer.setLoyaltyPoints(customer.getLoyaltyPoints() + points);
-            customer.setLastPurchaseDate(LocalDateTime.now());
-            return true;
-        }
-        return false;
-    }
-
-    // Hiển thị đơn giản
-    public void displayAll() {
-        for (Customer c : customers) {
-            System.out.printf("ID: %d | Tên: %s | SĐT: %s | Điểm: %d\n",
-                    c.getCustomerId(), c.getName(), c.getPhone(), c.getLoyaltyPoints());
+    public void printCustomerList() {
+        int len = customers.size();
+        for (int i = 0; i < len; i++) {
+            System.out.println("Customer ID: " + customers.get(i).getCustomerId() + 
+                             ", Fullname: " + customers.get(i).getFullname());
         }
     }
 }

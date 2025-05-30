@@ -26,23 +26,76 @@ public class OrderDetails {
         this.conditionNote = "";
     }
 
-    // Getters and Setters
-    public int getOrderId() { return orderId; }
-    public void setOrderId(int orderId) { this.orderId = orderId; }
-    public int getCarId() { return carId; }
-    public void setCarId(int carId) { this.carId = carId; }
-    public int getQuantity() { return quantity; }
-    public void setQuantity(int quantity) { this.quantity = quantity; }
-    public double getPriceEach() { return priceEach; }
-    public void setPriceEach(double priceEach) { this.priceEach = priceEach; }
-    public double getDiscount() { return discount; }
-    public void setDiscount(double discount) { this.discount = discount; }
-    public String getSerialNumber() { return serialNumber; }
-    public void setSerialNumber(String serialNumber) { this.serialNumber = serialNumber; }
-    public String getDeliveryStatus() { return deliveryStatus; }
-    public void setDeliveryStatus(String deliveryStatus) { this.deliveryStatus = deliveryStatus; }
-    public LocalDateTime getReturnDate() { return returnDate; }
-    public void setReturnDate(LocalDateTime returnDate) { this.returnDate = returnDate; }
-    public String getConditionNote() { return conditionNote; }
-    public void setConditionNote(String conditionNote) { this.conditionNote = conditionNote; }
+    // Getter va Setter
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
+    public int getCarId() {
+        return carId;
+    }
+
+    public void setCarId(int carId) {
+        this.carId = carId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getPriceEach() {
+        return priceEach;
+    }
+
+    public void setPriceEach(double priceEach) {
+        this.priceEach = priceEach;
+    }
+
+    public double getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
+    public String getDeliveryStatus() {
+        return deliveryStatus;
+    }
+
+    public void setDeliveryStatus(String deliveryStatus) {
+        this.deliveryStatus = deliveryStatus;
+    }
+
+    public LocalDateTime getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(LocalDateTime returnDate) {
+        this.returnDate = returnDate;
+    }
+
+    public String getConditionNote() {
+        return conditionNote;
+    }
+
+    public void setConditionNote(String conditionNote) {
+        this.conditionNote = conditionNote;
+    }
 }
