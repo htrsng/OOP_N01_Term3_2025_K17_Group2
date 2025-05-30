@@ -95,18 +95,6 @@ public class CarManagerTest {
                     carManager.printCarList();
                     break;
 
-                case 7:
-                    System.out.println("In tat ca xe (test):");
-                    for (Car car : carManager.getCars()) {
-                        System.out.println("Ma xe: " + car.getCarId() +
-                                           ", Ten xe: " + car.getCarName() +
-                                           ", Hang: " + car.getBrand() +
-                                           ", Gia: " + car.getPrice() +
-                                           ", So luong: " + car.getQuantity() +
-                                           ", Trang thai: " + car.getStatus());
-                    }
-                    break;
-
                 default:
                     System.out.println("Lua chon khong hop le! Vui long chon lai.");
             }
