@@ -7,7 +7,6 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         CarManager carManager = new CarManager();
         
-        // Thêm dữ liệu ban đầu (có thể bỏ nếu không cần)
         carManager.addCar(new Car("XE001", "Toyota Camry", "Toyota", 50000.0, 10, "conhang"));
         carManager.addCar(new Car("XE002", "Honda", "Honda", 40000.0, 0, "hethang"));
 
@@ -31,7 +30,7 @@ public class App {
             }
 
             switch (choice) {
-                case 1: // Thêm xe
+                case 1: 
                     System.out.println("Nhap thong tin xe moi:");
                     System.out.print("Ma xe: ");
                     String carId = scanner.nextLine();
@@ -41,17 +40,17 @@ public class App {
                     String brand = scanner.nextLine();
                     System.out.print("Gia: ");
                     double price = scanner.nextDouble();
-                    scanner.nextLine(); // Thêm dòng này để loại bỏ '\n'
+                    scanner.nextLine(); 
                     System.out.print("So luong: ");
                     int quantity = scanner.nextInt();
-                    scanner.nextLine(); // Thêm dòng này để loại bỏ '\n'
+                    scanner.nextLine(); 
                     System.out.print("Trang thai: ");
                     String status = scanner.nextLine();
                     Car newCar = new Car(carId, carName, brand, price, quantity, status);
                     carManager.addCar(newCar);
                     break;
 
-                case 2: // Sửa xe
+                case 2: 
                     System.out.print("Nhap ma xe can sua: ");
                     String editCarId = scanner.nextLine();
                     System.out.println("Nhap thong tin moi cho xe:");
@@ -61,27 +60,27 @@ public class App {
                     String newBrand = scanner.nextLine();
                     System.out.print("Gia: ");
                     double newPrice = scanner.nextDouble();
-                    scanner.nextLine(); // Thêm dòng này để loại bỏ '\n'
+                    scanner.nextLine(); 
                     System.out.print("So luong: ");
                     int newQuantity = scanner.nextInt();
-                    scanner.nextLine(); // Thêm dòng này để loại bỏ '\n'
+                    scanner.nextLine(); 
                     System.out.print("Trang thai: ");
                     String newStatus = scanner.nextLine();
                     carManager.editCar(editCarId, newCarName, newBrand, newPrice, newQuantity, newStatus);
                     break;
 
-                case 3: // Xóa xe
+                case 3: 
                     System.out.print("Nhap ma xe can xoa: ");
                     String deleteCarId = scanner.nextLine();
                     carManager.getDeleteCar(deleteCarId);
                     break;
 
-                case 4: // Hiển thị danh sách
+                case 4: 
                     System.out.println("Danh sach xe:");
                     carManager.printCarList();
                     break;
 
-                case 5: // Thoat
+                case 5: 
                     System.out.println("Tam biet!");
                     scanner.close();
                     System.exit(0);

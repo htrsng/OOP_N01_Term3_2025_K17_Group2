@@ -2,41 +2,58 @@ package manager;
 
 import model.Customer;
 import java.util.ArrayList;
-import java.time.LocalDateTime;
 
 public class CustomerManager {
     ArrayList<Customer> customers = new ArrayList<>();
 
+    // Them khach hang
     public ArrayList<Customer> addCustomer(Customer customer) {
         customers.add(customer);
-        System.out.println("da them khach hang: " + customer.getFullname());
+        System.out.println("Da them khach hang: " + customer.getFullname());
         return customers;
     }
 
-    public ArrayList<Customer> getEditCustomer(String fullname, int customerId) {
-        for (int i = 0; i < customers.size(); i++) {
-            if (customers.get(i).getCustomerId() == customerId) {
-                System.out.println("true");
-                customers.get(i).setFullname(fullname);
+    // Sua thong tin khach hang
+    public void editCustomer(int customerId, String fullname, String phone, String address) {
+        for (Customer c : customers) {
+            if (c.getCustomerId() == customerId) {
+                c.setFullname(fullname);
+                c.setPhone(phone);
+                c.setAddress(address);
+                System.out.println("Da sua thong tin khach hang co ID: " + customerId);
+                return;
             }
         }
-        return customers;
+        System.out.println("Khong tim thay khach hang co ID: " + customerId);
     }
 
-    public ArrayList<Customer> getDeleteCustomer(int customerId) {
+    // Xoa khach hang
+    public void deleteCustomer(int customerId) {
         for (int i = 0; i < customers.size(); i++) {
             if (customers.get(i).getCustomerId() == customerId) {
                 customers.remove(i);
+                System.out.println("Da xoa khach hang co ID: " + customerId);
+                return;
             }
         }
-        return customers;
+        System.out.println("Khong tim thay khach hang co ID: " + customerId);
     }
 
+    // In danh sach khach hang
     public void printCustomerList() {
-        int len = customers.size();
-        for (int i = 0; i < len; i++) {
-            System.out.println("Customer ID: " + customers.get(i).getCustomerId() + 
-                             ", Fullname: " + customers.get(i).getFullname());
+        if (customers.isEmpty()) {
+            System.out.println("Khong co khach hang nao.");
         }
+        for (Customer c : customers) {
+            System.out.println("ID: " + c.getCustomerId() +
+                               ", Ten: " + c.getFullname() +
+                               ", SDT: " + c.getPhone() +
+                               ", Dia chi: " + c.getAddress());
+        }
+    }
+
+    // Lay danh sach khach hang
+    public ArrayList<Customer> getCustomers() {
+        return customers;
     }
 }
