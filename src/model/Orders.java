@@ -10,11 +10,7 @@ public class Orders {
     private String status;
     private double deposit;
     private double totalPrice;
-    private String paymentMethod;
-    private String paymentStatus;
-    private String deliveryAddress;
-    private int employeeId;
-    private String discountCode;
+    
 
     // Constructor
     public Orders(int orderId, int customerId, LocalDateTime orderDate, LocalDateTime pickupDate, String status, double deposit) {
@@ -25,11 +21,7 @@ public class Orders {
         this.status = status;
         this.deposit = deposit;
         this.totalPrice = 0.0;
-        this.paymentMethod = "";
-        this.paymentStatus = "unpaid";
-        this.deliveryAddress = "";
-        this.employeeId = 0;
-        this.discountCode = "";
+        
     }
 
     // Getter va Setter
@@ -89,43 +81,4 @@ public class Orders {
         this.totalPrice = totalPrice;
     }
 
-    public String getPaymentMethod() {
-        return paymentMethod;
-    }
-
-    public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
-    }
-
-    public String getPaymentStatus() {
-        return paymentStatus;
-    }
-
-    public void setPaymentStatus(String paymentStatus) {
-        this.paymentStatus = paymentStatus;
-    }
-
-    public String getDeliveryAddress() {
-        return deliveryAddress;
-    }
-
-    public void setDeliveryAddress(String deliveryAddress) {
-        this.deliveryAddress = deliveryAddress;
-    }
-
-    public int getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    public String getDiscountCode() {
-        return discountCode;
-    }
-
-    public void setDiscountCode(String discountCode) {
-        this.discountCode = discountCode;
-    }
 }
