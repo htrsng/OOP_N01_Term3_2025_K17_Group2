@@ -4,39 +4,53 @@ import model.OrderDetails;
 import java.util.ArrayList;
 
 public class OrderDetailsManager {
-    ArrayList<OrderDetails> orderDetails = new ArrayList<>();
+    ArrayList<OrderDetails> orderDetailsList = new ArrayList<>();
 
+    // Them chi tiet don hang
     public ArrayList<OrderDetails> addOrderDetails(OrderDetails orderDetail) {
-        orderDetails.add(orderDetail);
-        System.out.println("da them " + orderDetail.getOrderId());
-        return orderDetails;
+        orderDetailsList.add(orderDetail);
+        System.out.println("Da them chi tiet don hang voi Order ID: " + orderDetail.getOrderId());
+        return orderDetailsList;
     }
 
-    public ArrayList<OrderDetails> getEditOrderDetails(int quantity, int orderId) {
-        for (int i = 0; i < orderDetails.size(); i++) {
-            if (orderDetails.get(i).getOrderId() == orderId) {
-                System.out.println("true");
-                orderDetails.get(i).setQuantity(quantity);
+    // Sua so luong cua chi tiet don hang theo orderId
+    public void editOrderDetails(int orderId, int newQuantity) {
+        for (OrderDetails od : orderDetailsList) {
+            if (od.getOrderId() == orderId) {
+                od.setQuantity(newQuantity);
+                System.out.println("Da sua so luong cho Order ID: " + orderId);
+                return;
             }
         }
-        return orderDetails;
+        System.out.println("Khong tim thay chi tiet don hang co Order ID: " + orderId);
     }
 
-    public ArrayList<OrderDetails> getDeleteOrderDetails(int orderId) {
-        for (int i = 0; i < orderDetails.size(); i++) {
-            if (orderDetails.get(i).getOrderId() == orderId) {
-                orderDetails.remove(i);
+    // Xoa chi tiet don hang theo orderId
+    public void deleteOrderDetails(int orderId) {
+        for (int i = 0; i < orderDetailsList.size(); i++) {
+            if (orderDetailsList.get(i).getOrderId() == orderId) {
+                orderDetailsList.remove(i);
+                System.out.println("Da xoa chi tiet don hang co Order ID: " + orderId);
+                return;
             }
         }
-        return orderDetails;
+        System.out.println("Khong tim thay chi tiet don hang co Order ID: " + orderId);
     }
 
+    // In danh sach chi tiet don hang
     public void printOrderDetailsList() {
-        int len = orderDetails.size();
-        for (int i = 0; i < len; i++) {
-            System.out.println("Order ID: " + orderDetails.get(i).getOrderId() + 
-                             ", Car ID: " + orderDetails.get(i).getCarId() + 
-                             ", Quantity: " + orderDetails.get(i).getQuantity());
+        if (orderDetailsList.isEmpty()) {
+            System.out.println("Khong co chi tiet don hang nao.");
         }
+        for (OrderDetails od : orderDetailsList) {
+            System.out.println("Order ID: " + od.getOrderId() +
+                               ", Car ID: " + od.getCarId() +
+                               ", Quantity: " + od.getQuantity());
+        }
+    }
+
+    // Lay danh sach chi tiet don hang
+    public ArrayList<OrderDetails> getOrderDetailsList() {
+        return orderDetailsList;
     }
 }
