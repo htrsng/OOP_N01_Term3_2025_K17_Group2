@@ -2,54 +2,84 @@ package manager;
 
 import model.Orders;
 import java.util.ArrayList;
+import java.time.LocalDateTime;
 
 public class OrderManager {
     ArrayList<Orders> orders = new ArrayList<>();
 
-    // Them don hang
     public ArrayList<Orders> addOrder(Orders order) {
-        orders.add(order);
-        System.out.println("Da them don hang: " + order.getOrderId());
-        return orders;
-    }
-
-    // Sua don hang (vi du: sua trang thai)
-    public ArrayList<Orders> editOrder(int orderId, String status) {
-        for (Orders o : orders) {
-            if (o.getOrderId() == orderId) {
-                o.setStatus(status);
-                System.out.println("Da sua don hang co ID: " + orderId);
+        try {
+            if (order == null) {
+                throw new IllegalArgumentException("Don hang khong duoc null.");
             }
+            orders.add(order);
+            System.out.println("Da them don hang ID: " + order.getOrderId());
+            return orders;
+        } catch (Exception e) {
+            System.out.println("Loi khi them don hang: " + e.getMessage());
+            return orders;
         }
-        return orders;
     }
 
-    // Xoa don hang
+    public ArrayList<Orders> updateOrder(int orderId, String status, double deposit) {
+        try {
+            for (int i = 0; i < orders.size(); i++) {
+                if (orders.get(i).getOrderId() == orderId) {
+                    orders.get(i).setStatus(status);
+                    orders.get(i).setDeposit(deposit);
+                    System.out.println("Da cap nhat don hang ID: " + orderId);
+                    return orders;
+                }
+            }
+            System.out.println("Khong tim thay don hang ID: " + orderId);
+            return orders;
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Loi truy cap danh sach: " + e.getMessage());
+            return orders;
+        } catch (Exception e) {
+            System.out.println("Loi khi cap nhat don hang: " + e.getMessage());
+            return orders;
+        }
+    }
+
     public ArrayList<Orders> deleteOrder(int orderId) {
-        for (int i = 0; i < orders.size(); i++) {
-            if (orders.get(i).getOrderId() == orderId) {
-                orders.remove(i);
-                System.out.println("Da xoa don hang co ID: " + orderId);
-                break;
+        try {
+            for (int i = 0; i < orders.size(); i++) {
+                if (orders.get(i).getOrderId() == orderId) {
+                    orders.remove(i);
+                    System.out.println("Da xoa don hang ID: " + orderId);
+                    return orders;
+                }
             }
+            System.out.println("Khong tim thay don hang ID: " + orderId);
+            return orders;
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Loi truy cap danh sach: " + e.getMessage());
+            return orders;
+        } catch (Exception e) {
+            System.out.println("Loi khi xoa don hang: " + e.getMessage());
+            return orders;
         }
-        return orders;
     }
 
-    // In danh sach don hang
     public void printOrderList() {
-        if (orders.isEmpty()) {
-            System.out.println("Khong co don hang nao.");
-        }
-        for (Orders o : orders) {
-            System.out.println("Order ID: " + o.getOrderId() +
-                               ", Customer ID: " + o.getCustomerId() +
-                               ", Ngay dat: " + o.getOrderDate() +
-                               ", Trang thai: " + o.getStatus());
+        try {
+            int len = orders.size();
+            if (len == 0) {
+                System.out.println("Danh sach don hang trong.");
+                return;
+            }
+            for (int i = 0; i < len; i++) {
+                System.out.println("Order ID: " + orders.get(i).getOrderId() +
+                                 ", Customer ID: " + orders.get(i).getCustomerId() +
+                                 ", Status: " + orders.get(i).getStatus() +
+                                 ", Deposit: " + orders.get(i).getDeposit());
+            }
+        } catch (Exception e) {
+            System.out.println("Loi khi hien thi danh sach don hang: " + e.getMessage());
         }
     }
 
-    // Lay danh sach don hang
     public ArrayList<Orders> getOrders() {
         return orders;
     }
