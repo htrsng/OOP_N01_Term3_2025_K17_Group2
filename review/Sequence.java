@@ -11,16 +11,16 @@ public class Sequence {
     public void add(Object x) {
         if (next < objects.length) {
             objects[next] = x;
-            next++;  // nhớ dấu chấm phẩy
+            next++;  
         }
     }
 
-    // inner class SSelector implements Selector interface
+  
     private class SSelector implements Selector {
         int i = 0;
 
         public boolean end() {
-            return i == next;  // so sánh với next (số phần tử đã thêm)
+            return i == next;  
         }
 
         public Object current() {
