@@ -1,9 +1,7 @@
-import manager.CarManager;
-import model.Car;
-import test.TestStudent;
+import test.TestSequence;
 
 public class App {
     public static void main(String[] args) {
-        TestStudent.main(null);
+        TestSequence.main(args);
     }
 }
