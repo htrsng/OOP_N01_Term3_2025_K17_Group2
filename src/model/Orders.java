@@ -5,11 +5,11 @@ import java.time.LocalDateTime;
 public class Orders {
     private int orderId;
     private int customerId;
-    private LocalDateTime orderDate;
-    private LocalDateTime pickupDate;
-    private String status;
-    private double deposit;
-    private double totalPrice;
+    private LocalDateTime orderDate; // Ngay dat hang
+    private LocalDateTime pickupDate; // Ngay nhan hang
+    private String status; // Trang thai don hang (pending, completed, cancelled)
+    private double deposit; // Tien dat coc
+    private double totalPrice; // Tong tien thanh toan
     
 
     // Constructor

@@ -2,6 +2,7 @@ package manager;
 
 import model.Car;
 import java.util.ArrayList;
+import java.time.LocalDateTime;
 
 public class CarManager {
     private ArrayList<Car> cars = new ArrayList<>();
@@ -25,6 +26,7 @@ public class CarManager {
                 car.setPrice(price);
                 car.setQuantity(quantity);
                 car.setStatus(status);
+                car.setUpdatedAt(LocalDateTime.now()); // Cap nhat thoi gian
                 System.out.println("Da cap nhat xe co ma: " + carId);
                 return;
             }
@@ -79,8 +81,38 @@ public class CarManager {
         }
     }
 
+    // Kiem tra xe co san de ban
+    public boolean checkCarAvailability(String carId) {
+        for (Car car : cars) {
+            if (car.getCarId().equals(carId)) {
+                if (!"conhang".equals(car.getStatus())) {
+                    System.out.println("Loi: Xe co ma " + carId + " khong con hang.");
+                    return false;
+                }
+                if (car.getQuantity() <= 0) {
+                    System.out.println("Loi: Xe co ma " + carId + " da het hang.");
+                    return false;
+                }
+                return true;
+            }
+        }
+        System.out.println("Loi: Khong tim thay xe co ma " + carId + ".");
+        return false;
+    }
+
     // Lay danh sach xe
     public ArrayList<Car> getCars() {
         return cars;
+    }
+
+    // Cap nhat so luong xe
+    public void updateCarQuantity(String carId, int newQuantity) {
+        for (Car car : cars) {
+            if (car.getCarId().equals(carId)) {
+                car.setQuantity(newQuantity);
+                car.setUpdatedAt(LocalDateTime.now()); // Cap nhat thoi gian
+                return;
+            }
+        }
     }
 }

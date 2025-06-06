@@ -4,15 +4,13 @@ import java.time.LocalDateTime;
 public class Car {
     private String carId;
     private String carName;
-    private String brand;
-    private double price;
-    private int quantity;
-    private String status;
-    private String description;
-    private String imageUrl;
-    private int warrantyPeriod;
-    private LocalDateTime lastMaintenance;
-    private String category;
+    private String brand; //hang
+    private double price;//gia
+    private int quantity; // so luong
+    private String status;  //trang thai
+    private LocalDateTime createdAt; // Ngay tao xe
+    private LocalDateTime updatedAt; // Ngay cap nhat xe
+    
 
     // Constructor
     public Car(String carId, String carName, String brand, double price, int quantity, String status) {
@@ -22,11 +20,9 @@ public class Car {
         this.price = price;
         this.quantity = quantity;
         this.status = status;
-        this.description = "";
-        this.imageUrl = "";
-        this.warrantyPeriod = 0;
-        this.lastMaintenance = null;
-        this.category = "";
+        this.createdAt = LocalDateTime.now(); // Set createdAt to current time
+        this.updatedAt = LocalDateTime.now(); // Set updatedAt to current time
+        
     }
 
     // Getters and Setters
@@ -77,44 +73,19 @@ public class Car {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    public String getDescription() {
-        return description;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
-
-    public String getImageUrl() {
-        return imageUrl;
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
+    
 
-    public int getWarrantyPeriod() {
-        return warrantyPeriod;
-    }
-
-    public void setWarrantyPeriod(int warrantyPeriod) {
-        this.warrantyPeriod = warrantyPeriod;
-    }
-
-    public LocalDateTime getLastMaintenance() {
-        return lastMaintenance;
-    }
-
-    public void setLastMaintenance(LocalDateTime lastMaintenance) {
-        this.lastMaintenance = lastMaintenance;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
+    
 }

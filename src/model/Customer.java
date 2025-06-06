@@ -7,11 +7,10 @@ public class Customer {
     private String fullname;
     private String phone;
     private String address;
-    private LocalDateTime createdAt;
-    private int loyaltyPoints;
-    private LocalDateTime lastPurchaseDate;
-    private String notes;
-    private boolean marketingOptIn;
+    private LocalDateTime createdAt; // Ngay tao tai khoan
+    private int loyaltyPoints; // Diem thuong
+    private LocalDateTime lastPurchaseDate; // Ngay mua hang cuoi
+   
 
     // Constructor
     public Customer(int customerId, String fullname, String phone, String address, LocalDateTime createdAt) {
@@ -22,8 +21,7 @@ public class Customer {
         this.createdAt = createdAt;
         this.loyaltyPoints = 0;
         this.lastPurchaseDate = null;
-        this.notes = "";
-        this.marketingOptIn = false;
+       
     }
 
     // Getter va Setter
@@ -79,19 +77,5 @@ public class Customer {
         this.lastPurchaseDate = lastPurchaseDate;
     }
 
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
-    public boolean isMarketingOptIn() {
-        return marketingOptIn;
-    }
-
-    public void setMarketingOptIn(boolean marketingOptIn) {
-        this.marketingOptIn = marketingOptIn;
-    }
+    
 }
