@@ -84,7 +84,7 @@ public class OrderManager {
         LocalDateTime now = LocalDateTime.now(); 
         Orders order = new Orders(orderId, customerId, now, null, "pending", deposit);
         orders.add(order);
-        System.out.println("Da tao don hang voi dat coc: " + order.toString());
+        System.out.println("Da tao don hang moi voi ID: " + orderId + ", Customer ID: " + customerId + ", Deposit: " + deposit);
     }
 
     // Tim kiem don hang theo orderId
