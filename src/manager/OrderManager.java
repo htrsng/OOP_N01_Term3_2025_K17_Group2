@@ -1,6 +1,8 @@
 package manager;
 
 import model.Orders;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class OrderManager {
@@ -76,5 +78,22 @@ public class OrderManager {
     // Lay danh sach don hang
     public ArrayList<Orders> getOrders() {
         return orders;
+    }
+    // Tao don hang moi
+    public void createOrderWithDeposit(int orderId, int customerId, String carId, double deposit) {
+        LocalDateTime now = LocalDateTime.now(); 
+        Orders order = new Orders(orderId, customerId, now, null, "pending", deposit);
+        orders.add(order);
+        System.out.println("Da tao don hang voi dat coc: " + order.toString());
+    }
+
+    // Tim kiem don hang theo orderId
+    public Orders findOrderById(int orderId) {
+        for (Orders order : orders) {
+            if (order.getOrderId() == orderId) {
+                return order;
+            }
+        }
+        return null;
     }
 }
