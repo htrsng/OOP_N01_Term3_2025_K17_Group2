@@ -1,3 +1,4 @@
+package test;
 import manager.CarManager;
 import model.Car;
 import java.util.Scanner;
@@ -7,6 +8,10 @@ public class CarManagerTest {
         Scanner scanner = new Scanner(System.in);
         CarManager carManager = new CarManager();
 
+        carManager.addCar(new Car("XE01", "Toyota Camry", "Toyota", 50000.0, 10, "conhang"));
+        carManager.addCar(new Car("XE02", "Honda Civic", "Honda", 45000.0, 0, "conhang")); 
+        carManager.addCar(new Car("XE03", "Mazda CX-5", "Mazda", 55000.0, 5, "hethang")); 
+
         while (true) {
             System.out.println(" MENU QUAN LY XE");
             System.out.println("1. Them xe moi");
@@ -14,8 +19,8 @@ public class CarManagerTest {
             System.out.println("3. Xoa xe");
             System.out.println("4. Hien thi danh sach xe con hang");
             System.out.println("5. Hien thi tat ca xe");
-            System.out.println("6. Thoat");
-            System.out.println("7. In tat ca xe"); 
+            System.out.println("6. Kiem tra xe co san");
+            System.out.println("7. Thoat");
             System.out.print("Nhap lua chon cua ban: ");
 
             int choice;
@@ -28,7 +33,7 @@ public class CarManagerTest {
                 continue;
             }
 
-            if (choice == 6) {
+            if (choice == 7) {
                 System.out.println("Tam biet!");
                 scanner.close();
                 break;
@@ -54,7 +59,7 @@ public class CarManagerTest {
                     break;
 
                 case 2:
-                    System.out.print("Nhap Ma xe can sua : ");
+                    System.out.print("Nhap Ma xe can sua: ");
                     String editCarId = scanner.nextLine();
                     System.out.print("Nhap Ten xe moi: ");
                     String newCarName = scanner.nextLine();
@@ -78,21 +83,21 @@ public class CarManagerTest {
 
                 case 4:
                     System.out.println("Danh sach xe con hang:");
-                    for (Car car : carManager.getCars()) {
-                        if ("conhang".equalsIgnoreCase(car.getStatus())) {
-                            System.out.println("Ma xe: " + car.getCarId() +
-                                               ", Ten xe: " + car.getCarName() +
-                                               ", Hang: " + car.getBrand() +
-                                               ", Gia: " + car.getPrice() +
-                                               ", So luong: " + car.getQuantity() +
-                                               ", Trang thai: " + car.getStatus());
-                        }
-                    }
+                    carManager.displayAvailableCars();
                     break;
 
                 case 5:
                     System.out.println("Tat ca xe:");
                     carManager.printCarList();
+                    break;
+
+                case 6:
+                    System.out.print("Nhap Ma xe can kiem tra: ");
+                    String checkCarId = scanner.nextLine();
+                    boolean isAvailable = carManager.checkCarAvailability(checkCarId);
+                    if (isAvailable) {
+                        System.out.println("Xe con ma " + checkCarId + " san sang de ban.");
+                    }
                     break;
 
                 default:
@@ -101,5 +106,3 @@ public class CarManagerTest {
         }
     }
 }
-
-

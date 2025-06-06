@@ -5,13 +5,11 @@ import java.time.LocalDateTime;
 public class OrderDetails {
     private int orderId;
     private int carId;
-    private int quantity;
-    private double priceEach;
-    private double discount;
-    private String serialNumber;
-    private String deliveryStatus;
-    private LocalDateTime returnDate;
-    private String conditionNote;
+    private int quantity; // So luong xe
+    private double priceEach; // Gia moi xe
+    private String deliveryStatus; // Trang thai giao hang
+    private LocalDateTime returnDate; // Ngay tra hang
+    private String conditionNote; // Ghi chu ve tinh trang xe
 
     // Constructor
     public OrderDetails(int orderId, int carId, int quantity, double priceEach) {
@@ -19,8 +17,7 @@ public class OrderDetails {
         this.carId = carId;
         this.quantity = quantity;
         this.priceEach = priceEach;
-        this.discount = 0.0;
-        this.serialNumber = "";
+       
         this.deliveryStatus = "pending";
         this.returnDate = null;
         this.conditionNote = "";
@@ -59,21 +56,6 @@ public class OrderDetails {
         this.priceEach = priceEach;
     }
 
-    public double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
-
-    public String getSerialNumber() {
-        return serialNumber;
-    }
-
-    public void setSerialNumber(String serialNumber) {
-        this.serialNumber = serialNumber;
-    }
 
     public String getDeliveryStatus() {
         return deliveryStatus;
