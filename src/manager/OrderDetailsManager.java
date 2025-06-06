@@ -37,6 +37,7 @@ public class OrderDetailsManager {
         System.out.println("Khong tim thay chi tiet don hang co Order ID: " + orderId);
     }
 
+    
     // In danh sach chi tiet don hang
     public void printOrderDetailsList() {
         if (orderDetailsList.isEmpty()) {
@@ -48,7 +49,7 @@ public class OrderDetailsManager {
                                ", Quantity: " + od.getQuantity());
         }
     }
-
+     
     // Lay danh sach chi tiet don hang
     public ArrayList<OrderDetails> getOrderDetailsList() {
         return orderDetailsList;
