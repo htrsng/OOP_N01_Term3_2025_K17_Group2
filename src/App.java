@@ -1,7 +1,7 @@
-import test.CarManagerTest;
+import test.OrderManagerTest;
 
 public class App {
     public static void main(String[] args) {
-        CarManagerTest.main(args);
+        OrderManagerTest.main(args);
     }
 }
