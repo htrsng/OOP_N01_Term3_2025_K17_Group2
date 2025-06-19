@@ -5,9 +5,9 @@
 //         OrderManagerTest.main(args);
 //     }
 // }
-import test.SaleManagerTest;
+import test.CustomerManagerTest;
 public class App {
     public static void main(String[] args) {
-        SaleManagerTest.main(null);
+        CustomerManagerTest.main(null);
     }
 }
