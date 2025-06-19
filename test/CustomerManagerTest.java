@@ -1,3 +1,4 @@
+package test;
 import manager.CustomerManager;
 import model.Customer;
 
