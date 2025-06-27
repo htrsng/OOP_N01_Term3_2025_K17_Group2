@@ -1,50 +1,86 @@
-package com.example.servingwebcontent.model;
+package com.example.servingwebcontent.service;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import com.example.servingwebcontent.model.Customer;
+import com.example.servingwebcontent.model.Invoice;
+import com.example.servingwebcontent.repository.CustomerRepository;
+import com.example.servingwebcontent.repository.InvoiceRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.List;
+import java.util.Optional;
 
+@Service
 public class CustomerList {
-    private ArrayList<Customer> cus = new ArrayList<Customer>();
+    @Autowired
+    private CustomerRepository customerRepository;
+    @Autowired
+    private InvoiceRepository invoiceRepository;
 
-    // Thêm khách hàng
+    // CRUD
     public void addCustomer(Customer customer) {
-        cus.add(customer);
-    }
-
-    // Sửa tên khách hàng theo ID
-    public void editCustomerName(String customerId, String newName) {
-        for (Customer c : cus) {
-            if (c.getId().equals(customerId)) {
-                c.setName(newName);
-                System.out.println("Đã cập nhật tên khách hàng.");
-                return;
-            }
+        if (customerRepository.existsById(customer.getId())) {
+            throw new IllegalArgumentException("Customer ID " + customer.getId() + " already exists!");
         }
-        System.out.println("Không tìm thấy khách hàng có ID: " + customerId);
+        // Có thể thêm kiểm tra định dạng email/phone nếu cần
+        customerRepository.save(customer);
     }
 
-    // Xóa khách hàng theo ID
-    public void deleteCustomer(String customerId) {
-        for (int i = 0; i < cus.size(); i++) {
-            if (cus.get(i).getId().equals(customerId)) {
-                cus.remove(i);
-                System.out.println("Đã xóa khách hàng có ID: " + customerId);
-                return;
-            }
+    public List<Customer> getAllCustomers() {
+        return customerRepository.findAll();
+    }
+
+    public void updateCustomer(String id, String name, String email, String phoneNumber, String address) {
+        Optional<Customer> customerOpt = customerRepository.findById(id);
+        if (customerOpt.isEmpty()) {
+            throw new IllegalArgumentException("Customer with ID " + id + " not found!");
         }
-        System.out.println("Không tìm thấy khách hàng có ID: " + customerId);
+        Customer customer = customerOpt.get();
+        customer.setName(name);
+        customer.setEmail(email);
+        customer.setPhoneNumber(phoneNumber);
+        customer.setAddress(address);
+        customerRepository.save(customer);
     }
 
-    // In danh sách khách hàng
-    public void printCustomerList() {
-        int len= cus.size();
-        for (int i=0; i < len; i++) {
-                System.out.println("Customer ID: " + cus.get(i).getId());
-                System.out.println("Customer Name: " + cus.get(i).getName());
-                System.out.println("Customer Phone: " + cus.get(i).getPhoneNumber());
-                System.out.println("Customer Email: " + cus.get(i).getEmail());
-                System.out.println("-------------------------");
+    public void deleteCustomer(String id) {
+        Optional<Customer> customerOpt = customerRepository.findById(id);
+        if (customerOpt.isEmpty()) {
+            throw new IllegalArgumentException("Customer with ID " + id + " not found!");
         }
+        Customer customer = customerOpt.get();
+        if (!customer.getPurchaseHistory().isEmpty()) {
+            throw new IllegalStateException("Cannot delete customer with existing invoices!");
+        }
+        customerRepository.deleteById(id);
     }
 
+
+    // Hỗ trợ: Tìm khách hàng theo ID
+    public Customer findCustomer(String id) {
+        Optional<Customer> customerOpt = customerRepository.findById(id);
+        return customerOpt.orElse(null);
+    }
+
+    // Thêm: Lấy lịch sử giao dịch
+    public List<Invoice> getPurchaseHistory(String customerId) {
+        Customer customer = findCustomer(customerId);
+        if (customer == null) {
+            throw new IllegalArgumentException("Customer with ID " + customerId + " not found!");
+        }
+        return customer.getPurchaseHistory();
+    }
+
+    // Thêm: Tính tổng tiền mua sắm
+    public double getTotalPurchaseAmount(String customerId) {
+        Customer customer = findCustomer(customerId);
+        if (customer == null) {
+            throw new IllegalArgumentException("Customer with ID " + customerId + " not found!");
+        }
+        return customer.getTotalPurchaseAmount();
+    }
+
+    // Thêm: Tìm kiếm khách hàng
+    public List<Customer> searchCustomers(String keyword) {
+        return customerRepository.findByKeyword(keyword);
+    }
 }
