@@ -76,7 +76,7 @@ Cụ thể:
 + Thống kê số lượng đơn đặt cọc theo trạng thái (đã hoàn thành/chưa hoàn thành).
 - Sơ đồ Behavioural Diagram của bài tập lớn
 + Sơ đồ quản lý 
- ![image](https://github.com/user-attachments/assets/f5607d0c-6e68-48ce-8bba-788133196c7d)
+ ![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/Bi%E1%BB%83u%20%C4%91%E1%BB%93%20kh%C3%B4ng%20c%C3%B3%20ti%C3%AAu%20%C4%91%E1%BB%81.drawio.png)
 + Sequence Diagram
 ![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/sequediagram%20(1).png)
 - Nội dung 04:
