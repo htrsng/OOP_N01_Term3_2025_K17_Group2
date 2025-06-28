@@ -77,12 +77,9 @@ Cụ thể:
 - Sơ đồ Behavioural Diagram của bài tập lớn
 + Sơ đồ quản lý 
  ![image](https://github.com/user-attachments/assets/f5607d0c-6e68-48ce-8bba-788133196c7d)
-+ Sơ đồ chức năng quản lý khách hàng
-  ![image](https://github.com/user-attachments/assets/b47e043e-c586-49e9-afb4-8af6941a7d3d)
-+ Sơ đồ chức năng đơn đặt cọc
- ![image](https://github.com/user-attachments/assets/892ccaf8-d9e3-4c9e-be22-36c6aad43adf)
-+ Sơ đồ chức năng quản lí xe
- ![image](https://github.com/user-attachments/assets/018d0f65-50fc-431f-9915-fa6b340c4fbd)
++ Sequence Diagram
++ https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/bPInRjim48Pt0Ng7GoOPQ5wWW8EWDj0AA38aCP2L4CynKPbKoLCIpnapvH6C3WKAU6edUvJHzz2RXAHbcvRb5Xbv_Ex8__z5NHfYciff7aVccv2WbS4uOXaf3IE3EeuAkoyoKJ19SEPAgIJKOvRX6J03exI5fF91YGm7If9MUOxQO_jbD_vL6F9Wi6wHWzAGcgBUeM6XpR80.png
+ 
 
 
 - Nội dung 04:
