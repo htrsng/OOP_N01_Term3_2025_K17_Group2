@@ -78,9 +78,7 @@ Cụ thể:
 + Sơ đồ quản lý 
  ![image](https://github.com/user-attachments/assets/f5607d0c-6e68-48ce-8bba-788133196c7d)
 + Sequence Diagram
-+ https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/bPInRjim48Pt0Ng7GoOPQ5wWW8EWDj0AA38aCP2L4CynKPbKoLCIpnapvH6C3WKAU6edUvJHzz2RXAHbcvRb5Xbv_Ex8__z5NHfYciff7aVccv2WbS4uOXaf3IE3EeuAkoyoKJ19SEPAgIJKOvRX6J03exI5fF91YGm7If9MUOxQO_jbD_vL6F9Wi6wHWzAGcgBUeM6XpR80.png
- 
-
+https://raw.githubusercontent.com/htrsng/OOP_N01_Term3_2025_K17_Group2/refs/heads/main/img/bPInRjim48Pt0Ng7GoOPQ5wWW8EWDj0AA38aCP2L4CynKPbKoLCIpnapvH6C3WKAU6edUvJHzz2RXAHbcvRb5Xbv_Ex8__z5NHfYciff7aVccv2WbS4uOXaf3IE3EeuAkoyoKJ19SEPAgIJKOvRX6J03exI5fF91YGm7If9MUOxQO_jbD_vL6F9Wi6wHWzAGcgBUeM6XpR80.png
 
 - Nội dung 04:
 Cập nhật code cho CRUD (create/read/update/delete)  và chạy kiểm định (test) cho ít nhất 03 đối tượng trong bài tập lớn (đã hoàn thành)
