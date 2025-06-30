@@ -237,13 +237,27 @@ Dựa trên mô hình MVC, ứng dụng cung cấp các chức năng chính sau:
 
  <div align="center">
 
-![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/Bi%E1%BB%83u%20%C4%91%E1%BB%93%20kh%C3%B4ng%20c%C3%B3%20ti%C3%AAu%20%C4%91%E1%BB%81.drawio.png)
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/clasdia.png)
 
 </div>
 
 ##### SEQUENCE DIAGRAM
-
+**Invoice**
  <div align="center">
+
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/sequediagram%20(1).png)
+
+</div>
+
+**Car**
+<div align="center">
+
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/carDIA.png)
+
+</div>
+
+**Customer**
+<div align="center">
 
 ![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/sequediagram%20(1).png)
 
@@ -251,9 +265,10 @@ Dựa trên mô hình MVC, ứng dụng cung cấp các chức năng chính sau:
 
 - Nội dung 04:
 Cập nhật code cho CRUD (create/read/update/delete)  và chạy kiểm định (test) cho ít nhất 03 đối tượng trong bài tập lớn (đã hoàn thành)
-
+<div align="center">
+ 
 ![image](https://github.com/user-attachments/assets/179cfcee-a8bd-4701-8392-14fbb1b82858)
-
+</div>
 
 Practice 6: Yêu cầu số 5 (của bài tập lớn)
 Câu  số 1. Các thành viên trong nhóm thảo luận 01 chức năng [phương thức] hoạt động chính [main] của  bài tập cuối kỳ. Sau đó, thực hiện thảo luận nhóm và vẽ lưu đồ thuật toán cho chức năng này. 
@@ -265,25 +280,10 @@ Phân tích thuật toán thành các chức năng nhỏ :
  + Tạo đơn hàng mới: Tạo một đơn hàng với thông tin khách hàng, xe, ngày đặt cọc, và số tiền đặt cọc.
  + Giao xe và cập nhật trạng thái đơn hàng: Khi giao xe thành công, cập nhật trạng thái đơn hàng thành "completed", giảm số lượng xe trong kho, và ghi nhận thời gian giao xe.
 
+### Giao Diện Website
+**Menu**
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/gdMenu.png)
 
 
-
-  ## Thành viên và Phân chia công việc: 
-
-**Thành Viên**
-
-|         Thành viên     |         Mã sinh viên    |        
-|------------------------|-------------------------|
-| Nguyễn Thị Huyền Trang |        23010181         | 
-| Đặng Đắc Tú            |  23010619               |
-| Lưu Quang Dũng         |   23010665              |
-
-**Phân chia công việc**
-
-|         Thành viên     |         Phân công                      |        
-|------------------------|----------------------------------------|
-| Nguyễn Thị Huyền Trang | Khởi tạo dự án, Quản lý xe             | 
-| Đặng Đắc Tú            | Liên kết Dữ Liệu, Quản lý khách hàng   |
-| Lưu Quang Dũng         | Xuất hóa đơn, Quản lý đơn hàng         |
 
 
