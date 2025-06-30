@@ -102,130 +102,135 @@
 #### 4. Build Tool: Quản lý thư viện và biên dịch dự án
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
 
-## Cấu Trúc Dự Án 
 
-- Mô hình: MVC (Model - View - Controller)
-- Controller: Xử lý yêu cầu HTTP
-- Model: Các lớp thực thể Car, Customer, Invoice
-- Repository: Giao diện JPA kết nối với cơ sở dữ liệu
-- Ứng dụng chính: OOPApplication khởi chạy hệ thống
 
 ## Cấu Trúc Thư Mục
 
 ```text
 
-OOP_N01_Term3_2025_K17_Group2-main
-├───qlcuahang
-            ├───src
-            │   │   App.class
-            │   │   App.java
-            │   │
-            │   ├───bin
-            │   │   │   App.class
-            │   │   │
-            │   │   ├───manager
-            │   │   │       CarManager.class
-            │   │   │       CustomerManager.class
-            │   │   │
-            │   │   └───model
-            │   │           Car.class
-            │   │           Customer.class
-            │   │
-            │   ├───manager
-            │   │       CarManager.class
-            │   │       CarManager.java
-            │   │       CustomerManager.class
-            │   │       CustomerManager.java
-            │   │       OrderDetailsManager.class
-            │   │       OrderDetailsManager.java
-            │   │       OrderManager.class
-            │   │       OrderManager.java
-            │   │       SaleManager.java
-            │   │
-            │   └───model
-            │           Car.class
-            │           Car.java
-            │           Customer.class
-            │           Customer.java
-            │           Invoice.java
-            │           Payment.java
-            │           PaymentStatus.java
-            │
-            └───test
-                    CarManagerTest.java
-                    CustomerManagerTest.java
-                    OrderDetailsManagerTest.java
-                    OrderManagerTest.java
-                    SaleManagerTest.java
-                    TestSequence.java
-                    TestStudent.java
+OOP_N01_Term3_2025_K17_Group2/
+├── .vscode/
+│   └── settings.json
+│   └── launch.json
+├── img
+├── review
+├── springbootApp/                 # PHẦN 1: Ứng dụng web Spring Boot
+│   ├── complete/
+│   │   ├── pom.xml
+│   │   ├── mvnw
+│   │   ├── .mvnw
+│   │   ├── mvnw.cmd
+│   │   ├── src/
+│   │   │   ├── main/
+│   │   │   │   ├── java/com/example/servingwebcontent/
+│   │   │   │   │   ├── controller/
+│   │   │   │   │   │   ├── CarController.java
+│   │   │   │   │   │   ├── CustomerController.java
+│   │   │   │   │   │   ├── InvoiceController.java
+│   │   │   │   │   ├── model/
+│   │   │   │   │   │   ├── Car.java
+│   │   │   │   │   │   ├── Customer.java
+│   │   │   │   │   │   └── Invoice.java
+│   │   │   │   │   │   └── Payment.java
+│   │   │   │   │   │   └── PaymentStatus.java
+│   │   │   │   │   ├── repository/
+│   │   │   │   │   │   ├── CarRepository.java
+│   │   │   │   │   │   ├── CustomerRepository.java
+│   │   │   │   │   │   └── InvoiceRepository.java
+│   │   │   │   │   ├── service/
+│   │   │   │   │   │   ├── Carlist.java
+│   │   │   │   │   │   ├── CustomerList.java
+│   │   │   │   │   │   ├── InvoiceList.java
+│   │   │   │   │   ├── GreetingController.java
+│   │   │   │   │   └── ServingWebContentApplication.java
+│   │   │   ├── resources/
+│   │   │   │   ├── static/
+│   │   │   │   │   └── index.html
+│   │   │   │   ├── templates/
+│   │   │   │   │   └── greeting.html
+│   │   │   │   │   └── car
+│   │   │   │   │   └── customer
+│   │   │   │   │   └── invoice
+│   │   │   │   └── application.properties
+│   │   ├── test/java/com/example/servingwebcontent/
+│   │   │   ├── testcontroller/
+│   │   │   │   ├── CarControllerTest.java
+│   │   │   │   ├── CustomerSlipControllerTest.java
+│   │   │   │   ├── InvoiceControllerTest.java
+│   │   │   └── ServingWebContentApplicationTest.java
+│   │   ├── target/test-classes/...               # File biên dịch
+│
+├── qlcuahang/                                     # PHẦN 2: Java core (không dùng Spring)
+│   ├── src/
+│   │   ├── bin
+│   │   ├── manager
+│   │   ├──modle
+│   │   ├── App.class
+│   ├── test/
+│   │   ├── CarManagerTest.java
+│   │   ├── CustomerManagerTest.java
+│   │   ├── InvoiceManagerTest.java
+│   │   ├── TestSequence.java
+│   │   ├── TestStudent.java
+├──.gitignore
+├── README.md 
 
  ```
 
 ## Mô Hình Và Chức Năng
 
-1. Mô hình hệ thống - Kiến trúc MVC (Model - view - Controller)
-Ứng dụng quản lý được phân ra làm ba phân chính theo mô hình MVC gồm:
-- Model
-Chứa các lớp đại diện thực thể trong hệ thống:
+## 1. Mô Hình Hệ Thống - Kiến Trúc MVC (Model - View - Controller)
 
-Car - Xe ôtô
-Customer - khách hàng 
-Invoice - Hóa đơn
+Ứng dụng được thiết kế theo mô hình **MVC**, bao gồm ba thành phần chính:
 
-- View
-Sử dụng Thymeleaf để hiển thị các trang HTML động:
+###  Model
 
-Trang danh sách đơn hàng
-Trang thêm sản phẩm
-Trang thống kê doanh thu
+Chứa các lớp đại diện cho thực thể trong hệ thống:
 
-- Controller
+- **Car**: Đại diện cho thông tin xe ô tô (mã xe, thương hiệu, mô hình, năm sản xuất, giá, trạng thái, ngày nhập kho, số lượng).
+- **Customer**: Đại diện cho thông tin khách hàng (mã khách hàng, tên, email, số điện thoại, địa chỉ, ngày đăng ký, lịch sử mua hàng).
+- **Invoice**: Đại diện cho thông tin hóa đơn (mã hóa đơn, khách hàng, xe, tổng tiền, ngày lập, trạng thái thanh toán, lịch sử thanh toán, ghi chú, ngày nhận xe).
 
-Nhận các yêu cầu từ người dùng (qua URL hoặc button)
-Gọi Service để xử lý logic
-Trả về kết quả tới View hoặc dữ liệu JSON (nếu dùng REST)
+###  View
 
-2. Chức năng hệ thống (theo từng mô-đun)
-   - Sản phẩm (Product)
-Thêm, sửa, xóa sản phẩm
-Lọc tìm theo mã hoặc tên sản phẩm
+Sử dụng **Thymeleaf** làm template engine để tạo các trang HTML động:
 
-- Hóa đơn 
-Tạo, sửa, xóa đơn hàng
+- **Trang danh sách đơn hàng**: Hiển thị danh sách hóa đơn đã tạo.
+- **Trang thêm sản phẩm**: Cho phép người dùng nhập thông tin để thêm xe mới.
+- **Trang thống kê doanh thu**: Hiển thị các báo cáo về tổng doanh thu và trạng thái thanh toán.
 
-Lọc đơn theo:
+###  Controller
 
-Trạng thái
+- Nhận các yêu cầu từ người dùng (qua URL hoặc nút bấm trên giao diện).
+- Gọi các phương thức trong lớp **Service** để xử lý logic nghiệp vụ và trả về dữ liệu cho View.
 
-Ngày tạo
+---
 
-Khách hàng
+## 2. Chức Năng Hệ Thống
 
-Tên xe
+Dựa trên mô hình MVC, ứng dụng cung cấp các chức năng chính sau:
 
-Tính tổng tiền hóa đơn
+###  Quản Lý Xe (Car)
 
-- Khách hàng 
+- Thêm, sửa, xóa thông tin xe.
+- Tìm kiếm xe theo **thương hiệu**, **mô hình**, **năm sản xuất**, hoặc **trạng thái**.
+- Lọc xe theo **khoảng giá**, **số lượng tồn kho**, hoặc **trạng thái** (Available, Sold, Reserved, OutOfStock).
 
-Khách mua trực tiếp
+###  Quản Lý Khách Hàng (Customer)
 
-Quản lý thông tin, sửa, xóa
+- Thêm, sửa, xóa thông tin khách hàng.
+- Tìm kiếm khách hàng theo **tên**, **email**, **số điện thoại**, hoặc **địa chỉ**.
+- Lọc khách hàng theo **ngày đăng ký** hoặc **tổng tiền mua hàng**.
 
-Lọc tìm theo tên hoặc mã
+###  Quản Lý Hóa Đơn (Invoice)
 
-- Luồng xử lý chức năng tiêu biểu
-Ví dụ: Tạo đơn hàng
-
-Người dùng chọn Sales Invoices → tạo mã hóa đơn → chọn thông tin khách hàng
-
-chọn thông tin xe → nhập số lương mua
-
-chọn ngày mua → lưu đơn hàng
-
-Cập nhật lại tồn kho
-
-Trả về View hiển thị thêm đơn mới 
+- Tạo hóa đơn mới cho khách hàng khi mua xe.
+- Cập nhật thông tin hóa đơn (**tổng tiền**, **khách hàng**, **xe**).
+- Xóa hóa đơn (chỉ khi **chưa thanh toán**).
+- Thêm thanh toán cho hóa đơn và cập nhật **trạng thái** (Pending, Paid).
+- Tìm kiếm hóa đơn theo **mã**, **tên khách hàng**, **ngày lập**, hoặc **trạng thái thanh toán**.
+- Lọc hóa đơn theo **khoảng thời gian nhận xe**.
+---
 
 ### UML DIAGRAM
 ##### CLASS DIAGRAM 
