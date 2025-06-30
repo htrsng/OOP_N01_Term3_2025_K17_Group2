@@ -27,20 +27,16 @@
 <div align="center">
 
 
- |Trường     | Kiểu dữ liệu | Mô tả        |
- |-----------|--------------|--------------|
- |customerId|String,@Id|Mã khách hàng|
- |name       |        String|Tên khách hàng|
- |email      |        String| Địa chỉ email|
- |phoneNumber|        String| Số điện thoại|
- |address    |String        |       Địa chỉ|
- |purchases  |List<invoice>,@OneToMany)</invoice>|Mua hàng|
 
-Phương thức
- |Trường|Mô tả|
- |---|----|
- |addPurchase(Invoice)|Thêm hóa đơn vào danh sách mua hàng| 
- |deletePurchase(String invoiceId)|Xóa đơn hàng khỏi danh sách| 
+ | Trường           | Kiểu dữ liệu           | Mô tả                                                           |
+|------------------|------------------------|------------------------------------------------------------------|
+| id               | String                 | Mã khách hàng                                                    |
+| name             | String                 | Tên khách hàng                                                   |
+| email            | String                 | Địa chỉ email                                                    |
+| phoneNumber      | String                 | Số điện thoại (gồm 9–11 chữ số)                                 |
+| address          | String                 | Địa chỉ                                                          |
+| registrationDate | Date                   | Ngày đăng ký                                                     |
+| purchaseHistory  | List<Invoice>          | Danh sách hóa đơn của khách hàng                                |
 
 </div>
 
@@ -49,23 +45,16 @@ Phương thức
 <div align="center">
  
  |Trường|Kiểu dữ liệu| Mô tả|
- |---|----|----|
- |carId|String,@Id|Mã xe|
- |brand|String|Hãng xe|
- |model|String|Mẫu xe|
- |year|int|năm|
- |price|double|giá|
- |status|String:(Available, Sold, Reserved)|Trạng thái|
- |importDate|Date|Ngày nhập|
- |purchaseHistory|(List<invoice>, @OneToMany)</invoice>|Lịch sử mua|
+ ----------------|---------------------|------------------------------------|
+| carId          | String        | Mã xe (khóa chính, không được để trống) |
+| brand          | String             | Thương hiệu xe (không được để trống) |
+| model          | String             | Mô hình xe (không được để trống)   |
+| year           | int                | Năm sản xuất (≥ 1900)              |
+| price          | double             | Giá xe (phải dương)                |
+| status         | String             | Trạng thái xe (không được để trống) |
+| importDate     | Date               | Ngày nhập kho (bắt buộc)           |
+| quantity       | int                | Số lượng xe trong kho (≥ 0)
  
-Phương thức
-
- |Trường| Mô tả|
- |---|----|
- |sellCar()|Đặt **status** thành "Sold"|
- |isAvailable()|Kiểm tra **status** là "Available".
- |getCarDetails()| trả về thông tin chi tiết|
 
 </div>
 
@@ -73,22 +62,16 @@ Phương thức
 
 <div align="center">
 
- |Trường|Kiểu dữ liệu| Mô tả|
- |---|----|----|
- |invoiceId| String, @Id|Mã hóa đơn|
- |customer|Customer, @ManyToOne|Khách hàng|
- |car|Car,@ManyToOne|Xe|
- |date|Date|Thời gian|
- |totalAmount|double|Tổng số lượng|
-
- Phương thức 
- 
- |Trường| Mô tả|
- |---|----|
- |isValid()|Kiểm tra hóa đơn hợp lệ|
- |updateTotalAmount(double)|Cập nhập tổng tiền và trạng thái xe|
- |getInvoiceDetails()|Trả về thông tinn chi tiết|
- 
+ | Trường          | Kiểu dữ liệu     | Mô tả                                                           |
+|-----------------|------------------|------------------------------------------------------------------|
+| invoiceId       | String           | Mã hóa đơn                                                       |
+| customer        | Customer         | Khách hàng                                    |
+| car             | Car              | Xe (quan hệ nhiều–một)                                           |                 |
+| totalAmount     | double           | Tổng tiền (phải là số dương)                                     |
+| paymentStatus   | PaymentStatus    | Trạng thái thanh toán (PENDING hoặc PAID)                        |
+| paymentHistory  | List<Payment>    | Lịch sử thanh toán (xóa tự động khi hóa đơn bị xóa)             |
+| note            | String           | Ghi chú (không bắt buộc)                                         |
+| pickupDate      | Date             | Ngày nhận xe (có thể để trống)                                   |
  </div>
 
  ## Công Nghệ Đã Sử Dụng:
