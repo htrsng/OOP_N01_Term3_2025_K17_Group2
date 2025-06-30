@@ -1,91 +1,41 @@
 package model;
-import java.time.LocalDateTime;
+
+import java.util.Date;
 
 public class Car {
     private String carId;
-    private String carName;
-    private String brand; //hang
-    private double price;//gia
-    private int quantity; // so luong
-    private String status;  //trang thai
-    private LocalDateTime createdAt; // Ngay tao xe
-    private LocalDateTime updatedAt; // Ngay cap nhat xe
-    
+    private String brand;
+    private String model;
+    private double price;
+    private String status;
+    private Date importDate;
 
     // Constructor
-    public Car(String carId, String carName, String brand, double price, int quantity, String status) {
+    public Car(String carId, String brand, String model, double price, String status, Date importDate) {
         this.carId = carId;
-        this.carName = carName;
         this.brand = brand;
+        this.model = model;
         this.price = price;
-        this.quantity = quantity;
         this.status = status;
-        this.createdAt = LocalDateTime.now(); // Set createdAt to current time
-        this.updatedAt = LocalDateTime.now(); // Set updatedAt to current time
-        
+        this.importDate = importDate;
     }
 
     // Getters and Setters
-    public String getCarId() {
-        return carId;
-    }
+    public String getCarId() { return carId; }
+    public void setCarId(String carId) { this.carId = carId; }
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
+    public String getModel() { return model; }
+    public void setModel(String model) { this.model = model; }
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+    public Date getImportDate() { return importDate; }
+    public void setImportDate(Date importDate) { this.importDate = importDate; }
 
-    public void setCarId(String carId) {
-        this.carId = carId;
+    // Method to update status to Sold
+    public void sellCar() {
+        this.status = "Sold";
     }
-
-    public String getCarName() {
-        return carName;
-    }
-
-    public void setCarName(String carName) {
-        this.carName = carName;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-    
-
-    
 }
