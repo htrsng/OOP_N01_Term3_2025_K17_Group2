@@ -1,7 +1,9 @@
 package com.example.servingwebcontent.model;
 
 import jakarta.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "invoices")
@@ -11,7 +13,7 @@ public class Invoice {
 
     @ManyToOne
     @JoinColumn(name = "car_id")
-    private Car car; // Thay carId bằng mối quan hệ với Car
+    private Car car;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
@@ -20,17 +22,30 @@ public class Invoice {
     private Date date;
     private double totalAmount;
 
+    @Enumerated(EnumType.STRING)
+    private PaymentStatus paymentStatus; // Sử dụng enum riêng
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "invoice_id")
+    private List<Payment> paymentHistory = new ArrayList<>();
+
+    private String note;
+
+    @Temporal(TemporalType.DATE)
+    private Date pickupDate;
+
     public Invoice() {}
 
     public Invoice(String invoiceId, Customer customer, Car car, double totalAmount) {
-        if (totalAmount < 0) {
-            throw new IllegalArgumentException("Total amount cannot be negative!");
+        if (totalAmount <= 0) {
+            throw new IllegalArgumentException("Total amount must be positive!");
         }
         this.invoiceId = invoiceId;
         this.customer = customer;
         this.car = car;
         this.date = new Date();
         this.totalAmount = totalAmount;
+        this.paymentStatus = PaymentStatus.PENDING;
     }
 
     // Getters and Setters
@@ -49,40 +64,59 @@ public class Invoice {
     }
     public double getTotalAmount() { return totalAmount; }
     public void setTotalAmount(double totalAmount) {
-        if (totalAmount < 0) {
-            throw new IllegalArgumentException("Total amount cannot be negative!");
+        if (totalAmount <= 0) {
+            throw new IllegalArgumentException("Total amount must be positive!");
         }
         this.totalAmount = totalAmount;
     }
-
-    public String getCustomerId() {
-        return customer != null ? customer.getCustomerId() : null; // Giả định Customer có getCustomerId()
-    }
-
-    public String getCarId() {
-        return car != null ? car.getCarId() : null; // Giả định Car có getCarId()
-    }
+    public String getCustomerId() { return customer != null ? customer.getId() : null; }
+    public String getCarId() { return car != null ? car.getCarId() : null; }
+    public PaymentStatus getPaymentStatus() { return paymentStatus; }
+    public void setPaymentStatus(PaymentStatus paymentStatus) { this.paymentStatus = paymentStatus; }
+    public List<Payment> getPaymentHistory() { return paymentHistory; }
+    public void setPaymentHistory(List<Payment> paymentHistory) { this.paymentHistory = paymentHistory; }
+    public String getNote() { return note; }
+    public void setNote(String note) { this.note = note; }
+    public Date getPickupDate() { return pickupDate; }
+    public void setPickupDate(Date pickupDate) { this.pickupDate = pickupDate; }
 
     // Phương thức nghiệp vụ
     public boolean isValid() {
-        return customer != null && car != null && totalAmount >= 0 && date != null;
+        return customer != null && car != null && totalAmount > 0 && date != null;
     }
 
     public void updateTotalAmount(double newAmount) {
-        if (newAmount < 0) {
-            throw new IllegalArgumentException("Total amount cannot be negative!");
+        if (newAmount <= 0) {
+            throw new IllegalArgumentException("Total amount must be positive!");
         }
         this.totalAmount = newAmount;
         if (car != null) {
-            car.setStatus("Sold"); // Cập nhật trạng thái xe khi hóa đơn được cập nhật
+            car.setStatus("Sold");
         }
+    }
+
+    public void addPayment(double amount, Date paymentDate) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Payment amount must be positive!");
+        }
+        Payment payment = new Payment(paymentDate, amount);
+        paymentHistory.add(payment);
+        if (totalAmount <= calculateTotalPaid()) {
+            this.paymentStatus = PaymentStatus.PAID;
+        }
+    }
+
+    public double calculateTotalPaid() {
+        return paymentHistory.stream().mapToDouble(Payment::getAmount).sum();
     }
 
     public String getInvoiceDetails() {
         return "Invoice ID: " + invoiceId +
-               ", Customer ID: " + (customer != null ? customer.getCustomerId() : "N/A") +
+               ", Customer ID: " + (customer != null ? customer.getId() : "N/A") +
                ", Car ID: " + (car != null ? car.getCarId() : "N/A") +
                ", Date: " + (date != null ? date : "N/A") +
-               ", Total: " + totalAmount + " VND";
+               ", Total: " + totalAmount + " VND" +
+               ", Status: " + paymentStatus +
+               ", Paid: " + calculateTotalPaid() + " VND";
     }
 }
