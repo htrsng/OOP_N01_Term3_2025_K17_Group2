@@ -2,79 +2,66 @@ package com.example.servingwebcontent.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.*;
 import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Car {
     @Id
+    @NotBlank(message = "Car ID is required")
     private String carId;
+
+    @NotBlank(message = "Brand is required")
     private String brand;
+
+    @NotBlank(message = "Model is required")
     private String model;
+
+    @Min(value = 1900, message = "Year must be >= 1900")
     private int year;
+
+    @Positive(message = "Price must be positive")
     private double price;
-    private String status; // Available, Sold, Reserved
+
+    @NotBlank(message = "Status is required")
+    private String status;
+
+    @NotNull(message = "Import date is required")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date importDate;
 
-    public Car() {}
-
-    public Car(String carId, String brand, String model, int year, double price, String status, Date importDate) {
-        this.carId = carId;
-        this.brand = brand;
-        this.model = model;
-        this.year = year;
-        this.price = price;
-        this.status = status;
-        this.importDate = importDate;
-    }
+    @Min(value = 0, message = "Quantity must be >= 0")
+    private int quantity; // Số lượng xe trong kho
 
     // Getters and Setters
     public String getCarId() { return carId; }
     public void setCarId(String carId) { this.carId = carId; }
-
     public String getBrand() { return brand; }
     public void setBrand(String brand) { this.brand = brand; }
-
     public String getModel() { return model; }
     public void setModel(String model) { this.model = model; }
-
     public int getYear() { return year; }
-    public void setYear(int year) {
-        if (year < 1900) throw new IllegalArgumentException("Year must be at least 1900!");
-        this.year = year;
-    }
-
+    public void setYear(int year) { this.year = year; }
     public double getPrice() { return price; }
-    public void setPrice(double price) {
-        if (price < 0) throw new IllegalArgumentException("Price cannot be negative!");
-        this.price = price;
-    }
-
+    public void setPrice(double price) { this.price = price; }
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
-
     public Date getImportDate() { return importDate; }
     public void setImportDate(Date importDate) { this.importDate = importDate; }
+    public int getQuantity() { return quantity; }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 
-    // Methods
+    // Giảm số lượng xe khi bán, có bắt lỗi
     public void sellCar() {
-        if (!"Available".equalsIgnoreCase(status)) {
-            throw new IllegalStateException("Car is not available for sale!");
+        try {
+            if (this.quantity > 0) {
+                this.quantity--;
+            } else {
+                throw new IllegalStateException("Số lượng xe không đủ để bán!");
+            }
+        } catch (Exception e) {
+            System.err.println("Lỗi khi bán xe: " + e.getMessage());
         }
-        this.status = "Sold";
-    }
-    public boolean isAvailable() {
-        return "Available".equalsIgnoreCase(status);
-    }
-
-    public String getCarDetails() {
-        return "ID: " + carId +
-               ", Brand: " + brand +
-               ", Model: " + model +
-               ", Year: " + year +
-               ", Price: " + price + " VND" +
-               ", Status: " + status +
-               ", Import Date: " + importDate;
     }
 }
