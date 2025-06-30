@@ -17,8 +17,9 @@
 - Tạo hóa đơn 
 - Tìm kiếm thông tin hóa đơn
 - Trực quản hóa dữ liệu
+- In hóa đơn 
 
- ## Thiết kết cơ sở dữ liệu
+ ## Thiết Kết Cơ Sở Dữ LLiệu
  
 
  **Customer**
@@ -89,61 +90,142 @@ Phương thức
  
  </div>
 
- ### Công nghệ 
+ ## Công Nghệ Đã Sử Dụng:
+ 
+1. Frontend: Engine dựng HTML, tích hợp trực tiếp trong Spring Boot
+![Thymeleaf](https://img.shields.io/badge/Thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white)
+2. Backend: Framework chính để phát triển ứng dụng web (theo kiến trúc MVC)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
+3. Database: CSDL quan hệ để lưu trữ đơn hàng, sản phẩm, khách hàng...
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+4. Build Tool: Quản lý thư viện và biên dịch dự án
+![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
 
-## Câu 2 . Phân tích cơ sở ít nhất 03 đối tượng
-1. **Khách hàng**: quản lý thông tin khách mua xe gồm : mã đơn, tên khách, số điện thoại , mã xe .
+## Cấu Trúc Dự Án 
 
-2. **Sản phẩm (Xe)**: quản lý các sản phẩm có trong cửa hàng : mã sản phẩm, tên , hãng , giá , số lượng trong kho , tình trang (còn /hết) .
+- Mô hình: MVC (Model - View - Controller)
+- Controller: Xử lý yêu cầu HTTP
+- Model: Các lớp thực thể Car, Customer, Invoice
+- Repository: Giao diện JPA kết nối với cơ sở dữ liệu
+- Ứng dụng chính: OOPApplication khởi chạy hệ thống
 
-3. **Đơn đặt cọc**: quản lý các đơn đặt xe + đặt cọc : mã đơn, thông tin khách , sản phẩm , ngày đặt , ngày hẹn lấy , tiền cọc , trạng thái đặt (đã /chưa).
+## Cấu Trúc Thư Mục
 
-## Câu 3 . xây dựng cấu trúc folder của Project
- Đã hoàn thành 
+```text
 
-## Các class đã tạo:
-1. KhachHang.java
-2.  Xe.java
-3.  DonDatCoc.java
-4. KhachHangTest.java
-5. XeTest.java
-6.  DonDatCocTest.java
+OOP_N01_Term3_2025_K17_Group2-main
+├───qlcuahang
+            ├───src
+            │   │   App.class
+            │   │   App.java
+            │   │
+            │   ├───bin
+            │   │   │   App.class
+            │   │   │
+            │   │   ├───manager
+            │   │   │       CarManager.class
+            │   │   │       CustomerManager.class
+            │   │   │
+            │   │   └───model
+            │   │           Car.class
+            │   │           Customer.class
+            │   │
+            │   ├───manager
+            │   │       CarManager.class
+            │   │       CarManager.java
+            │   │       CustomerManager.class
+            │   │       CustomerManager.java
+            │   │       OrderDetailsManager.class
+            │   │       OrderDetailsManager.java
+            │   │       OrderManager.class
+            │   │       OrderManager.java
+            │   │       SaleManager.java
+            │   │
+            │   └───model
+            │           Car.class
+            │           Car.java
+            │           Customer.class
+            │           Customer.java
+            │           Invoice.java
+            │           Payment.java
+            │           PaymentStatus.java
+            │
+            └───test
+                    CarManagerTest.java
+                    CustomerManagerTest.java
+                    OrderDetailsManagerTest.java
+                    OrderManagerTest.java
+                    SaleManagerTest.java
+                    TestSequence.java
+                    TestStudent.java
 
-##  Các class kiểm định:
-- KhachHangTest.java
-- XeTest.java
-- DonDatCocTest.java
+ ```
 
-Project_nhóm-02:
-Xây dựng ứng dụng quản lý cửa hàng xe.
+## Mô Hình Và Chức Năng
 
-Yêu cầu chính:
-- Giao diện <b>Java Spring Boot</b>.
-- Có chức năng chính :
-+ Quản lý khách hàng, xe, và đơn đặt cọc.
-+ Và các chức năng khác.
+1. Mô hình hệ thống - Kiến trúc MVC (Model - view - Controller)
+Ứng dụng quản lý được phân ra làm ba phân chính theo mô hình MVC gồm:
+- Model
+Chứa các lớp đại diện thực thể trong hệ thống:
 
-Cụ thể:
+Car - Xe ôtô
+Customer - khách hàng 
+Invoice - Hóa đơn
 
-- Quản lý Khách hàng
-+ chức năng: Thêm, sửa, xóa thông tin khách hàng.
-+ Liệt kê: Hiển thị danh sách khách hàng, tên khách hàng.
+- View
+Sử dụng Thymeleaf để hiển thị các trang HTML động:
 
-- Quản lý Xe
-+ Chức năng: Thêm, sửa, xóa thông tin xe (bao gồm mã xe, tên xe, hãng xe, giá, số lượng, trạng thái).
-+ Liệt kê: Hiển thị danh sách xe, có thể lọc theo hãng xe hoặc trạng thái (còn/hết hàng).
+Trang danh sách đơn hàng
+Trang thêm sản phẩm
+Trang thống kê doanh thu
 
-- Quản lý Đơn đặt cọc
-+ Chức năng: Thêm, sửa, xóa đơn đặt cọc.
-+ Gán khách hàng cho xe: Cho phép gán một khách hàng cụ thể cho một xe trong đơn đặt cọc.
+- Controller
 
-- Dữ liệu được lưu trữ dưới dạng file nhị phân.
-+ Các lớp liên quan (KhachHang, Xe, DonDatCoc) được thiết kế để đọc và ghi dữ liệu từ/đến một hoặc nhiều file nhị phân.
+Nhận các yêu cầu từ người dùng (qua URL hoặc button)
+Gọi Service để xử lý logic
+Trả về kết quả tới View hoặc dữ liệu JSON (nếu dùng REST)
 
-- Trong bộ nhớ, dữ liệu được lưu trữ dưới dạng Collection (ví dụ: ArrayList cho danh sách khách hàng/xe, Map để ánh xạ khách hàng với đơn đặt cọc).
-- Chức năng bổ sung (tùy chọn):
-+ Tìm kiếm xe theo giá hoặc số lượng.
-+ Thống kê số lượng đơn đặt cọc theo trạng thái (đã hoàn thành/chưa hoàn thành).
+2. Chức năng hệ thống (theo từng mô-đun)
+   - Sản phẩm (Product)
+Thêm, sửa, xóa sản phẩm
+Lọc tìm theo mã hoặc tên sản phẩm
+
+- Hóa đơn 
+Tạo, sửa, xóa đơn hàng
+
+Lọc đơn theo:
+
+Trạng thái
+
+Ngày tạo
+
+Khách hàng
+
+Tên xe
+
+Tính tổng tiền hóa đơn
+
+- Khách hàng 
+
+Khách mua trực tiếp
+
+Quản lý thông tin, sửa, xóa
+
+Lọc tìm theo tên hoặc mã
+
+- Luồng xử lý chức năng tiêu biểu
+Ví dụ: Tạo đơn hàng
+
+Người dùng chọn Sales Invoices → tạo mã hóa đơn → chọn thông tin khách hàng
+
+chọn thông tin xe → nhập số lương mua
+
+chọn ngày mua → lưu đơn hàng
+
+Cập nhật lại tồn kho
+
+Trả về View hiển thị thêm đơn mới 
+
 ### UML DIAGRAM
 ##### CLASS DIAGRAM 
 
