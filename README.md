@@ -1,31 +1,39 @@
 
 # OOP_N01_Term3_2025_K17_Group2
 
-# QUẢN LÝ CỬA HÀNG BÁN XE
+#  ỨNG DỤNG QUẢN LÝ CỬA HÀNG BÁN XE
  
 **GIỚI THIỆU:** Ứng dụng web quản lý cửa hàng xe giúp cho người đung quản lý số lượng xe, danh sách khách hàng và các hóa đơn mua hàng một cách thuận tiện và trực quan.
 - Quản lý khách hàng
 - Quản lý số lượng xe
 - Quản lý đơn đặt xe
 
- **Tính Năng** 
-- Tổng quát về bảng điều khiển và số liệu thống kê
-- Quản lý danh sách xe trong kho
-- Nhập/Xuất số lượng xe trong kho hàng
-- Quản lý danh sách khách hàng 
-- Thêm thông tin khách hàng
-- Tạo hóa đơn 
-- Tìm kiếm thông tin hóa đơn
-- Trực quản hóa dữ liệu
-- In hóa đơn 
+**Thành Viên Nhóm**
+- Nguyễn Thị Huyền Trang_23010181 : Phát triển phần mềm
+- Đặng Đắc Tú_23010619 : Phát triển phần mềm
+- Lưu Quang Dũng_23010665 : Phát triển phần mềm
 
+  ---
+
+ ## Chức Năng Chính :
+ **Quản lý khách hàng :**
+ - Thêm , sửa , xóa thông tin khách hàng như tên , số điện thoại ..
+ - Hiển thị chi tiết thông tin khách hàng bao gồm các thông tin cơ bản trước đó cùng với ngày đăng kí tài khoản , tổng số tiền đã mua kèm với các thông tin về lịch sử mua hàng trước đó.
+ - Lọc danh sách tìm kiếm người dùng theo thông tin.
+**Quản lý xe :**
+- Thêm , sửa , xóa các thông tin của xe .
+- Lọc hiển thị danh sách xe theo thông tin , trạng thái trong kho (còn , hết , sắp hết)
+- Hiển thị thông tin cơ bản của xe kèm theo đó là ngày được cho vào kho để dễ quản lý hơn
+
+**Quản lý hóa đơn :**
+- Thêm , sửa , xóa hóa đơn.
+- Tìm kiếm , lọc hiển thị danh sách xe dựa các thông tin của xe , dựa vào ngày tạo đơn , trạng thái của hóa đơn .
+- Hiển thị chi tiết đơn hàng .
+- In hóa đơn gồm thông tin của xe , của khách hàng rồi in hóa đơn ở dạng file pdf.
  ## Thiết Kết Cơ Sở Dữ Liệu
  
 
  **Customer**
-
-<div align="center">
-
 
 
  | Trường           | Kiểu dữ liệu           | Mô tả                                                           |
@@ -38,11 +46,9 @@
 | registrationDate | Date                   | Ngày đăng ký                                                     |
 | purchaseHistory  | List<Invoice>          | Danh sách hóa đơn của khách hàng                                |
 
-</div>
 
  **Car**
 
-<div align="center">
  
  |Trường|Kiểu dữ liệu| Mô tả|
  ----------------|---------------------|------------------------------------|
@@ -55,8 +61,6 @@
 | importDate     | Date               | Ngày nhập kho (bắt buộc)           |
 | quantity       | int                | Số lượng xe trong kho (≥ 0)
  
-
-</div>
 
  **Invoice**
 
@@ -71,8 +75,7 @@
 | paymentStatus   | PaymentStatus    | Trạng thái thanh toán (PENDING hoặc PAID)                        |
 | paymentHistory  | List<Payment>    | Lịch sử thanh toán (xóa tự động khi hóa đơn bị xóa)             |
 | note            | String           | Ghi chú (không bắt buộc)                                         |
-| pickupDate      | Date             | Ngày nhận xe (có thể để trống)                                   |
- </div>
+| pickupDate      | Date             | Ngày nhận xe (có thể để trống)                                   | 
 
  ## Công Nghệ Đã Sử Dụng:
  
