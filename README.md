@@ -265,10 +265,6 @@ Dựa trên mô hình MVC, ứng dụng cung cấp các chức năng chính sau:
 
 - Nội dung 04:
 Cập nhật code cho CRUD (create/read/update/delete)  và chạy kiểm định (test) cho ít nhất 03 đối tượng trong bài tập lớn (đã hoàn thành)
-<div align="center">
- 
-![image](https://github.com/user-attachments/assets/179cfcee-a8bd-4701-8392-14fbb1b82858)
-</div>
 
 Practice 6: Yêu cầu số 5 (của bài tập lớn)
 Câu  số 1. Các thành viên trong nhóm thảo luận 01 chức năng [phương thức] hoạt động chính [main] của  bài tập cuối kỳ. Sau đó, thực hiện thảo luận nhóm và vẽ lưu đồ thuật toán cho chức năng này. 
@@ -282,7 +278,33 @@ Phân tích thuật toán thành các chức năng nhỏ :
 
 ### Giao Diện Website
 **Menu**
-![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/gdMenu.png)
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/UI1.png)
+
+**Quản lý khách hàng**
+
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/UIcus.png)
+
+**Thêm khách hàng**
+
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/addcus.png)
+
+**Danh sách khách hàng**
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/listcus.png)
+
+**Quản lý xe**
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/UIcar.png)
+**Thêm xe**
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/addcar.png)
+**Danh sách xe**
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/lisCar.png)
+**Tạo hóa đơn**
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/taoHD.png)
+**Danh sách hóa đơn**
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/lisHD.png)
+**In hóa đơn**
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/inHD.png)
+
+
 
 
 
