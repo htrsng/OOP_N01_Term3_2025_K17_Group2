@@ -78,4 +78,12 @@ public class CustomerList {
     public Page<Customer> getAllCustomers(PageRequest pageRequest) {
         return customerRepository.findAll(pageRequest);
     }
+
+    public static String normalize(String input) {
+        if (input == null) return "";
+        String temp = java.text.Normalizer.normalize(input, java.text.Normalizer.Form.NFD);
+        temp = temp.replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
+        temp = temp.replaceAll("đ", "d").replaceAll("Đ", "D");
+        return temp.replaceAll("\\s+", "").toLowerCase();
+    }
 }

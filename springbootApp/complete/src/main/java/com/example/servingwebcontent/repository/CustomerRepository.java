@@ -17,13 +17,6 @@ public interface CustomerRepository extends JpaRepository<Customer, String> {
     Page<Customer> findByRegistrationDateBetween(Date startDate, Date endDate, Pageable pageable);
 
     @Query("SELECT c FROM Customer c WHERE " +
-           "(:name IS NULL OR LOWER(c.name) LIKE LOWER(CONCAT('%', :name, '%'))) AND " +
-           "(:phoneNumber IS NULL OR c.phoneNumber LIKE %:phoneNumber%) AND " +
-           "(:email IS NULL OR LOWER(c.email) LIKE LOWER(CONCAT('%', :email, '%'))) AND " +
            "(:address IS NULL OR LOWER(c.address) LIKE LOWER(CONCAT('%', :address, '%')))")
-    Page<Customer> searchCustomers(@Param("name") String name,
-                                  @Param("phoneNumber") String phoneNumber,
-                                  @Param("email") String email,
-                                  @Param("address") String address,
-                                  Pageable pageable);
+    Page<Customer> searchCustomers(@Param("address") String address, Pageable pageable);
 }
