@@ -29,6 +29,7 @@
 
  |Trường     | Kiểu dữ liệu | Mô tả        |
  |-----------|--------------|--------------|
+ |customerId|String,@Id|Mã khách hàng|
  |name       |        String|Tên khách hàng|
  |email      |        String| Địa chỉ email|
  |phoneNumber|        String| Số điện thoại|
