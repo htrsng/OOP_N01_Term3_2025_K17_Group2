@@ -164,7 +164,7 @@ OOP_N01_Term3_2025_K17_Group2/
 │   ├── src/
 │   │   ├── bin
 │   │   ├── manager
-│   │   ├──modle
+│   │   ├── model
 │   │   ├── App.class
 │   ├── test/
 │   │   ├── CarManagerTest.java
