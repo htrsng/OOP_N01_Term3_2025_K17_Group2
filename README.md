@@ -19,7 +19,7 @@
 - Trực quản hóa dữ liệu
 - In hóa đơn 
 
- ## Thiết Kết Cơ Sở Dữ LLiệu
+ ## Thiết Kết Cơ Sở Dữ Liệu
  
 
  **Customer**
@@ -259,13 +259,20 @@ Phân tích thuật toán thành các chức năng nhỏ :
  + Tạo đơn hàng mới: Tạo một đơn hàng với thông tin khách hàng, xe, ngày đặt cọc, và số tiền đặt cọc.
  + Giao xe và cập nhật trạng thái đơn hàng: Khi giao xe thành công, cập nhật trạng thái đơn hàng thành "completed", giảm số lượng xe trong kho, và ghi nhận thời gian giao xe.
 
+
+
+
+  ## Thành viên và Phân chia công việc: 
+
+**Thành Viên**
+
 |         Thành viên     |         Mã sinh viên    |        
 |------------------------|-------------------------|
 | Nguyễn Thị Huyền Trang |        23010181         | 
 | Đặng Đắc Tú            |  23010619               |
 | Lưu Quang Dũng         |   23010665              |
 
-  ## Phân chia công việc: 
+**Phân chia công việc**
 
 |         Thành viên     |         Phân công                      |        
 |------------------------|----------------------------------------|
