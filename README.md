@@ -259,7 +259,7 @@ Dựa trên mô hình MVC, ứng dụng cung cấp các chức năng chính sau:
 **Customer**
 <div align="center">
 
-![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/sequediagram%20(1).png)
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/CustomerDIA.png)
 
 </div>
 
