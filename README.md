@@ -19,7 +19,13 @@
 - Trực quản hóa dữ liệu
 
  ## Thiết kết cơ sở dữ liệu
+ 
+
  **Customer**
+
+<div align="center">
+
+
  |Trường     | Kiểu dữ liệu | Mô tả        |
  |-----------|--------------|--------------|
  |name       |        String|Tên khách hàng|
@@ -34,7 +40,12 @@ Phương thức
  |addPurchase(Invoice)|Thêm hóa đơn vào danh sách mua hàng| 
  |deletePurchase(String invoiceId)|Xóa đơn hàng khỏi danh sách| 
 
+</div>
+
  **Car**
+
+<div align="center">
+ 
  |Trường|Kiểu dữ liệu| Mô tả|
  |---|----|----|
  |carId|String,@Id|Mã xe|
@@ -46,7 +57,7 @@ Phương thức
  |importDate|Date|Ngày nhập|
  |purchaseHistory|(List<invoice>, @OneToMany)</invoice>|Lịch sử mua|
  
-Phương tthức
+Phương thức
 
  |Trường| Mô tả|
  |---|----|
@@ -54,7 +65,11 @@ Phương tthức
  |isAvailable()|Kiểm tra **status** là "Available".
  |getCarDetails()| trả về thông tin chi tiết|
 
+</div>
+
  **Invoice**
+
+<div align="center">
 
  |Trường|Kiểu dữ liệu| Mô tả|
  |---|----|----|
@@ -68,10 +83,14 @@ Phương tthức
  
  |Trường| Mô tả|
  |---|----|
- |isValid|Kiểm tra hóa đơn hợp lệ|
+ |isValid()|Kiểm tra hóa đơn hợp lệ|
  |updateTotalAmount(double)|Cập nhập tổng tiền và trạng thái xe|
  |getInvoiceDetails()|Trả về thông tinn chi tiết|
  
+ </div>
+
+ ### Công nghệ 
+
 ## Câu 2 . Phân tích cơ sở ít nhất 03 đối tượng
 1. **Khách hàng**: quản lý thông tin khách mua xe gồm : mã đơn, tên khách, số điện thoại , mã xe .
 
@@ -127,9 +146,21 @@ Cụ thể:
 + Thống kê số lượng đơn đặt cọc theo trạng thái (đã hoàn thành/chưa hoàn thành).
 ### UML DIAGRAM
 ##### CLASS DIAGRAM 
+
+ <div align="center">
+
 ![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/Bi%E1%BB%83u%20%C4%91%E1%BB%93%20kh%C3%B4ng%20c%C3%B3%20ti%C3%AAu%20%C4%91%E1%BB%81.drawio.png)
+
+</div>
+
 ##### SEQUENCE DIAGRAM
+
+ <div align="center">
+
 ![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/sequediagram%20(1).png)
+
+</div>
+
 - Nội dung 04:
 Cập nhật code cho CRUD (create/read/update/delete)  và chạy kiểm định (test) cho ít nhất 03 đối tượng trong bài tập lớn (đã hoàn thành)
 
