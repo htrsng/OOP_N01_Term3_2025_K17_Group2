@@ -79,6 +79,7 @@
 | note            | String           | Ghi chú (không bắt buộc)                                         |
 | pickupDate      | Date             | Ngày nhận xe (có thể để trống)                                   | 
 
+---
  ## Công Nghệ Đã Sử Dụng:
  
 #### 1. Frontend
@@ -98,9 +99,7 @@
 #### 3. Lưu trữ dữ liệu
 - **Cơ sở dữ liệu**: Sử dụng MySQL được cung cấp qua Aiven Cloud để lưu trữ và quản lý dữ liệu lâu dài.
 - **Kết nối**: Tích hợp với Spring Data JPA, sử dụng cấu hình SSL để đảm bảo kết nối an toàn với Aiven MySQL
-4. Database: CSDL quan hệ để lưu trữ đơn hàng, sản phẩm, khách hàng...
-![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
-5. Build Tool: Quản lý thư viện và biên dịch dự án
+#### 4. Build Tool: Quản lý thư viện và biên dịch dự án
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
 
 ## Cấu Trúc Dự Án 
