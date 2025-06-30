@@ -20,6 +20,7 @@
  - Thêm , sửa , xóa thông tin khách hàng như tên , số điện thoại ..
  - Hiển thị chi tiết thông tin khách hàng bao gồm các thông tin cơ bản trước đó cùng với ngày đăng kí tài khoản , tổng số tiền đã mua kèm với các thông tin về lịch sử mua hàng trước đó.
  - Lọc danh sách tìm kiếm người dùng theo thông tin.
+   
 **Quản lý xe :**
 - Thêm , sửa , xóa các thông tin của xe .
 - Lọc hiển thị danh sách xe theo thông tin , trạng thái trong kho (còn , hết , sắp hết)
@@ -30,6 +31,8 @@
 - Tìm kiếm , lọc hiển thị danh sách xe dựa các thông tin của xe , dựa vào ngày tạo đơn , trạng thái của hóa đơn .
 - Hiển thị chi tiết đơn hàng .
 - In hóa đơn gồm thông tin của xe , của khách hàng rồi in hóa đơn ở dạng file pdf.
+
+---
  ## Thiết Kết Cơ Sở Dữ Liệu
  
 
