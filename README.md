@@ -81,13 +81,26 @@
 
  ## Công Nghệ Đã Sử Dụng:
  
-1. Frontend: Engine dựng HTML, tích hợp trực tiếp trong Spring Boot
-![Thymeleaf](https://img.shields.io/badge/Thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white)
-2. Backend: Framework chính để phát triển ứng dụng web (theo kiến trúc MVC)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
-3. Database: CSDL quan hệ để lưu trữ đơn hàng, sản phẩm, khách hàng...
+#### 1. Frontend
+- **Engine dựng HTML**: Sử dụng Thymeleaf làm template engine, tích hợp trực tiếp trong Spring Boot để tạo ra các trang HTML động.  
+  ![Thymeleaf](https://img.shields.io/badge/Thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white)
+
+#### 2. Backend
+- **Framework chính**: Phát triển ứng dụng web theo kiến trúc MVC, bao gồm:  
+  - **Controller**: Xử lý request và trả về response.  
+  - **Service**: Thực hiện logic nghiệp vụ.  
+  - **Repository**: Quản lý truy vấn dữ liệu.  
+  - **Model**: Đại diện cho các thực thể dữ liệu.  
+- **Ngôn ngữ**: Java 17.  
+- **Framework**: Spring Boot 3.5.3.  
+- **Thư viện**: Spring Web (xử lý web), Spring Data JPA (quản lý cơ sở dữ liệu).
+
+#### 3. Lưu trữ dữ liệu
+- **Cơ sở dữ liệu**: Sử dụng MySQL được cung cấp qua Aiven Cloud để lưu trữ và quản lý dữ liệu lâu dài.
+- **Kết nối**: Tích hợp với Spring Data JPA, sử dụng cấu hình SSL để đảm bảo kết nối an toàn với Aiven MySQL
+4. Database: CSDL quan hệ để lưu trữ đơn hàng, sản phẩm, khách hàng...
 ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
-4. Build Tool: Quản lý thư viện và biên dịch dự án
+5. Build Tool: Quản lý thư viện và biên dịch dự án
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
 
 ## Cấu Trúc Dự Án 
