@@ -1,9 +1,77 @@
 
-# Bài tap ve nha _ NHOM2
+# OOP_N01_Term3_2025_K17_Group2
 
-## Câu 1 . Tiêu đề 
-**Quản lý cửa hàng xe**
+# QUẢN LÝ CỬA HÀNG BÁN XE
+ 
+**GIỚI THIỆU:** Ứng dụng web quản lý cửa hàng xe giúp cho người đung quản lý số lượng xe, danh sách khách hàng và các hóa đơn mua hàng một cách thuận tiện và trực quan.
+- Quản lý khách hàng
+- Quản lý số lượng xe
+- Quản lý đơn đặt xe
 
+ **Tính Năng** 
+- Tổng quát về bảng điều khiển và số liệu thống kê
+- Quản lý danh sách xe trong kho
+- Nhập/Xuất số lượng xe trong kho hàng
+- Quản lý danh sách khách hàng 
+- Thêm thông tin khách hàng
+- Tạo hóa đơn 
+- Tìm kiếm thông tin hóa đơn
+- Trực quản hóa dữ liệu
+
+ ## Thiết kết cơ sở dữ liệu
+ **Customer**
+ |Trường     | Kiểu dữ liệu | Mô tả        |
+ |-----------|--------------|--------------|
+ |name       |        String|Tên khách hàng|
+ |email      |        String| Địa chỉ email|
+ |phoneNumber|        String| Số điện thoại|
+ |address    |String        |       Địa chỉ|
+ |purchases  |List<invoice>,@OneToMany)</invoice>|Mua hàng|
+
+Phương thức
+ |Trường|Mô tả|
+ |---|----|
+ |addPurchase(Invoice)|Thêm hóa đơn vào danh sách mua hàng| 
+ |deletePurchase(String invoiceId)|Xóa đơn hàng khỏi danh sách| 
+
+ **Car**
+ |Trường|Kiểu dữ liệu| Mô tả|
+ |---|----|----|
+ |carId|String,@Id|Mã xe|
+ |brand|String|Hãng xe|
+ |model|String|Mẫu xe|
+ |year|int|năm|
+ |price|double|giá|
+ |status|String:(Available, Sold, Reserved)|Trạng thái|
+ |importDate|Date|Ngày nhập|
+ |purchaseHistory|(List<invoice>, @OneToMany)</invoice>|Lịch sử mua|
+ 
+Phương tthức
+
+ |Trường| Mô tả|
+ |---|----|
+ |sellCar()|Đặt **status** thành "Sold"|
+ |isAvailable()|Kiểm tra **status** là "Available".
+ |getCarDetails()| trả về thông tin chi tiết|
+
+ **Invoice**
+
+ |Trường|Kiểu dữ liệu| Mô tả|
+ |---|----|----|
+ |invoiceId| String, @Id|Mã hóa đơn|
+ |customer|Customer, @ManyToOne|Khách hàng|
+ |car|Car,@ManyToOne|Xe|
+ |date|Date|Thời gian|
+ |totalAmount|double|Tổng số lượng|
+
+ Phương thức 
+ 
+ |Trường| Mô tả|
+ |---|----|
+ |isValid|Kiểm tra hóa đơn hợp lệ|
+ |updateTotalAmount(double)|Cập nhập tổng tiền và trạng thái xe|
+ |getInvoiceDetails()|Trả về thông tinn chi tiết|
+ 
 ## Câu 2 . Phân tích cơ sở ít nhất 03 đối tượng
 1. **Khách hàng**: quản lý thông tin khách mua xe gồm : mã đơn, tên khách, số điện thoại , mã xe .
 
@@ -14,7 +82,7 @@
 ## Câu 3 . xây dựng cấu trúc folder của Project
  Đã hoàn thành 
 
-## Câu 4. Các class đã tạo:
+## Các class đã tạo:
 1. KhachHang.java
 2.  Xe.java
 3.  DonDatCoc.java
@@ -22,27 +90,10 @@
 5. XeTest.java
 6.  DonDatCocTest.java
 
-## Câu 5. Các class kiểm định:
+##  Các class kiểm định:
 - KhachHangTest.java
 - XeTest.java
 - DonDatCocTest.java
-
-
-# Bài tap UML
-- Thành viên :
-1. Nguyễn Thị Huyền Trang
-ID : 23010181
-chữ ký : Trang
-
-2. Đặng Đắc Tú
-ID : 23010619
-chữ kí : Tú
-
-3. Lưu Quang Dũng
-ID : 23010665
-chữ kí : Dũng
-
-
 
 Project_nhóm-02:
 Xây dựng ứng dụng quản lý cửa hàng xe.
@@ -74,18 +125,11 @@ Cụ thể:
 - Chức năng bổ sung (tùy chọn):
 + Tìm kiếm xe theo giá hoặc số lượng.
 + Thống kê số lượng đơn đặt cọc theo trạng thái (đã hoàn thành/chưa hoàn thành).
-- Sơ đồ Behavioural Diagram của bài tập lớn
-          ![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/Bi%E1%BB%83u%20%C4%91%E1%BB%93%20kh%C3%B4ng%20c%C3%B3%20ti%C3%AAu%20%C4%91%E1%BB%81.drawio.png)
-+ Sequence Diagram
-- Tạo hóa đơn
-  
-   ![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/createInvoice.png)
-- Sửa hóa đơn
-  
-   ![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/editInvoice.png)
-- Xóa hóa đơn
-  
-   ![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/deleteInvoice.png) 
+### UML DIAGRAM
+##### CLASS DIAGRAM 
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/Bi%E1%BB%83u%20%C4%91%E1%BB%93%20kh%C3%B4ng%20c%C3%B3%20ti%C3%AAu%20%C4%91%E1%BB%81.drawio.png)
+##### SEQUENCE DIAGRAM
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/sequediagram%20(1).png)
 - Nội dung 04:
 Cập nhật code cho CRUD (create/read/update/delete)  và chạy kiểm định (test) cho ít nhất 03 đối tượng trong bài tập lớn (đã hoàn thành)
 
@@ -102,12 +146,18 @@ Phân tích thuật toán thành các chức năng nhỏ :
  + Tạo đơn hàng mới: Tạo một đơn hàng với thông tin khách hàng, xe, ngày đặt cọc, và số tiền đặt cọc.
  + Giao xe và cập nhật trạng thái đơn hàng: Khi giao xe thành công, cập nhật trạng thái đơn hàng thành "completed", giảm số lượng xe trong kho, và ghi nhận thời gian giao xe.
 
+|         Thành viên     |         Mã sinh viên    |        
+|------------------------|-------------------------|
+| Nguyễn Thị Huyền Trang |        23010181         | 
+| Đặng Đắc Tú            |  23010619               |
+| Lưu Quang Dũng         |   23010665              |
 
- phân công : 
- - Trang :  Kiểm tra xe có sẵn để bán: Kiểm tra xem xe (dựa trên ID xe) có trạng thái "conhang" và số lượng đủ để giao hay không.
- - Tú :  Tạo đơn hàng mới: Tạo một đơn hàng với thông tin khách hàng, xe, ngày đặt cọc, và số tiền đặt cọc.
- - Dũng :  Giao xe và cập nhật trạng thái đơn hàng: Khi giao xe thành công, cập nhật trạng thái đơn hàng thành "completed", giảm số lượng xe trong kho, và ghi nhận thời gian giao xe.
+  ## Phân chia công việc: 
 
-
+|         Thành viên     |         Phân công                      |        
+|------------------------|----------------------------------------|
+| Nguyễn Thị Huyền Trang | Khởi tạo dự án, Quản lý xe             | 
+| Đặng Đắc Tú            | Liên kết Dữ Liệu, Quản lý khách hàng   |
+| Lưu Quang Dũng         | Xuất hóa đơn, Quản lý đơn hàng         |
 
 
