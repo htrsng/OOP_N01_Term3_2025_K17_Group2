@@ -285,6 +285,8 @@ Dựa trên mô hình MVC, ứng dụng cung cấp các chức năng chính sau:
 ![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/addcar.png)
 **Danh sách xe**
 ![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/lisCar.png)
+**Quản lý hóa đơn**
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/UIHd%20(2).png)
 **Tạo hóa đơn**
 ![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/taoHD.png)
 **Danh sách hóa đơn**
