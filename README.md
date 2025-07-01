@@ -33,6 +33,9 @@
 - In hóa đơn gồm thông tin của xe , của khách hàng rồi in hóa đơn ở dạng file pdf.
 
 ---
+**Link demo :** https://www.youtube.com/watch?v=B8M0Srmn4_Q
+
+---
  ## Thiết Kết Cơ Sở Dữ Liệu
  
 
