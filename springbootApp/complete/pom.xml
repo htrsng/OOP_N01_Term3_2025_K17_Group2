@@ -50,7 +50,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <!-- ...các plugin khác nếu có... -->
         </plugins>
     </build>
 </project>
