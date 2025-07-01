@@ -263,6 +263,10 @@ Dựa trên mô hình MVC, ứng dụng cung cấp các chức năng chính sau:
 
 </div>
 
+**Lỗi giao diện khi cập nhập dữ liệu**
+![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/loi404.png)
+
+-Lỗi này sẽ được khắc phục sớm.
 
 ### Giao Diện Website
 **Menu**
