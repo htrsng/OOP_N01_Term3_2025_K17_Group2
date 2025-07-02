@@ -33,7 +33,7 @@
 - In hóa đơn gồm thông tin của xe , của khách hàng rồi in hóa đơn ở dạng file pdf.
 
 ---
-**Link demo :** https://www.youtube.com/watch?v=B8M0Srmn4_Q
+**Link demo :** https://youtu.be/QXX9m_14w1w
 
 ---
  ## Thiết Kết Cơ Sở Dữ Liệu
@@ -266,10 +266,6 @@ Dựa trên mô hình MVC, ứng dụng cung cấp các chức năng chính sau:
 
 </div>
 
-**Lỗi giao diện khi cập nhập dữ liệu**
-![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/loi404.png)
-
--Lỗi này sẽ được khắc phục sớm.
 
 ### Giao Diện Website
 **Menu**
