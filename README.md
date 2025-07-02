@@ -297,8 +297,34 @@ Dựa trên mô hình MVC, ứng dụng cung cấp các chức năng chính sau:
 **In hóa đơn**
 ![image](https://github.com/htrsng/OOP_N01_Term3_2025_K17_Group2/blob/main/img/inHD.png)
 
-
-
-
+## Hướng dẫn chạy 
+- Vào codesapce của githup tạo 1 nhánh mới
+- Thực hiện di chuyển vào thư mục spring để chạy
+  ```
+  cd springbootApp/complete
+  ```
+- Kiểm tra version java
+  ```
+  java --version
+  ```
+  Nếu java thuộc bản 11
+  thì thực hiện các bước
+  ```
+  sudo apt-get update
+  sudo apt-get install openjdk-17-jdk
+  ```
+  ```
+  sudo update-alternatives --config java
+  ```
+  
+  ```
+  export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+  export PATH=$JAVA_HOME/bin:$PATH
+  ```
+  
+- Rồi thực hiện kiểm tra java version nếu java đã thuộc bản java 17 thì thực hiện chạy lệnh để chạy trang web
+  ```
+  mvn spring-boot:run
+  ```
 
 
